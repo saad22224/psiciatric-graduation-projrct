@@ -46,14 +46,29 @@ body {
     display: flex;
     align-items: center;
     gap: 10px;
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: #4a5568;
+    text-decoration: none;
+    transition: transform 0.3s ease;
 }
 
-.nav-logo i {
+.nav-logo:hover {
+    transform: scale(1.05);
+}
+
+.nav-logo-img {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    border-radius: 12px;
+}
+
+.nav-logo-text {
+    font-size: 1.5rem;
+    font-weight: 700;
     color: #e91e63;
-    animation: heartbeat 1.5s ease-in-out infinite;
+    background: linear-gradient(135deg, #e91e63, #9c27b0);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
 }
 
 @keyframes heartbeat {
@@ -730,6 +745,13 @@ body {
     gap: 10px;
     font-size: 1.5rem;
     font-weight: 700;
+}
+
+.footer-logo-img {
+    width: 65px;
+    height: 65px;
+    object-fit: contain;
+    border-radius: 10px;
 }
 
 .footer-logo i {
