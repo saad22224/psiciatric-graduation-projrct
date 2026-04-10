@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مركز الدعم النفسي | رحلة الوعي</title>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .privacy-notice {
+            background: linear-gradient(135deg, #fce4ec 0%, #f3e5f5 100%);
+            color: #4a5568;
+            padding: 2rem;
+            text-align: center;
+            margin-bottom: 2rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(233, 30, 99, 0.1);
+            border: 2px solid rgba(233, 30, 99, 0.1);
+        }
+        
+        .privacy-notice i {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: #e91e63;
+        }
+        
+        .privacy-notice h2 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: #e91e63;
+        }
+        
+        .privacy-notice p {
+            font-size: 1.1rem;
+            color: #4a5568;
+        }
+        
+        .doctors-section {
+            padding: 3rem 0;
+        }
+        
+        .doctors-section h2 {
+            text-align: center;
+            margin-bottom: 3rem;
+            color: #e91e63;
+            font-size: 2.2rem;
+        }
+        
+        .doctors-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            padding: 0 2rem;
+        }
+        
+        .doctor-card {
+            background: white;
+            border-radius: 20px;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .doctor-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, #e91e63, #9c27b0);
+        }
+        
+        .doctor-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(233, 30, 99, 0.15);
+        }
+        
+        .doctor-avatar {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #e91e63 0%, #9c27b0 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            font-size: 3rem;
+            color: white;
+        }
+        
+        .doctor-name {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: #2d3748;
+            margin-bottom: 0.5rem;
+        }
+        
+        .doctor-specialty {
+            color: #4a5568;
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .doctor-experience {
+            color: #e91e63;
+            font-size: 0.9rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .doctor-contact {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+        }
+        
+        .contact-btn {
+            padding: 12px 20px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s ease;
+        }
+        
+        .whatsapp-btn {
+            background: linear-gradient(135deg, #25D366, #128C7E);
+            color: white;
+        }
+        
+        .whatsapp-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(37, 211, 102, 0.4);
+        }
+        
+        .facebook-btn {
+            background: linear-gradient(135deg, #1877F2, #166fe5);
+            color: white;
+        }
+        
+        .facebook-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(24, 119, 242, 0.4);
+        }
+        
+        .emergency-section {
+            background: linear-gradient(135deg, #fce4ec 0%, #f3e5f5 100%);
+            color: #4a5568;
+            padding: 3rem 2rem;
+            text-align: center;
+            margin-top: 3rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(233, 30, 99, 0.1);
+            border: 2px solid rgba(233, 30, 99, 0.1);
+        }
+        
+        .emergency-section h3 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: #e91e63;
+        }
+        
+        .emergency-section p {
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+            color: #4a5568;
+        }
+        
+        .emergency-phone {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: linear-gradient(135deg, #e91e63, #ff4081);
+            color: white;
+            padding: 15px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.3rem;
+            transition: all 0.3s ease;
+        }
+        
+        .emergency-phone:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 25px rgba(233, 30, 99, 0.4);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-heart"></i>
+                <span>رحلة الوعي</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">الرئيسية</a></li>
+                <li><a href="mental-health.html">الصحة النفسية</a></li>
+                <li><a href="stigma.html">الوصمة النفسية</a></li>
+                <li><a href="social-distance.html">المسافة الاجتماعية</a></li>
+                <li><a href="attitudes.html">الاتجاهات</a></li>
+                <li><a href="support-center.html" class="active">مركز الدعم</a></li>
+            </ul>
+            <div class="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Support Center Content -->
+    <section class="section" style="padding-top: 120px;">
+        <div class="container">
+            <div class="section-header" data-aos="fade-down">
+                <h2 class="section-title">مركز الدعم النفسي</h2>
+                <p class="section-subtitle">نحن هنا لدعمك في رحلتك نحو الصحة النفسية</p>
+            </div>
+
+            <!-- Privacy Notice -->
+            <div class="privacy-notice" data-aos="fade-up" data-aos-delay="200">
+                <i class="fas fa-shield-alt"></i>
+                <h2>🔒 معلوماتك في أمان تام</h2>
+                <p>نحن نضمن سرية تامة لجميع المعلومات والمحادثات. خصوصيتك هي أولويتنا القصوى. يمكنك التواصل مع الأطباء بكل راحة وثقة.</p>
+            </div>
+
+            <!-- Doctors Section -->
+            <div class="doctors-section">
+                <h2 data-aos="fade-up">فريق الأطباء المختصين</h2>
+                
+                <div class="doctors-grid">
+                    <!-- Doctor 1 -->
+                    <div class="doctor-card" data-aos="fade-up" data-aos-delay="100">
+                        <div class="doctor-avatar">
+                            <i class="fas fa-user-md"></i>
+                        </div>
+                        <div class="doctor-name">د. أحمد محمد</div>
+                        <div class="doctor-specialty">أخصائي الطب النفسي</div>
+                        <div class="doctor-experience">خبرة 15 عام في علاج الاكتئاب والقلق</div>
+                        <div class="doctor-contact">
+                            <a href="https://wa.me/201000000001" target="_blank" class="contact-btn whatsapp-btn">
+                                <i class="fab fa-whatsapp"></i> واتساب
+                            </a>
+                            <a href="https://facebook.com/doctor1" target="_blank" class="contact-btn facebook-btn">
+                                <i class="fab fa-facebook"></i> فيسبوك
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Doctor 2 -->
+                    <div class="doctor-card" data-aos="fade-up" data-aos-delay="200">
+                        <div class="doctor-avatar">
+                            <i class="fas fa-user-md"></i>
+                        </div>
+                        <div class="doctor-name">د. سارة أحمد</div>
+                        <div class="doctor-specialty">أخصائية علم النفس الإكلينيكي</div>
+                        <div class="doctor-experience">خبرة 12 عام في العلاج المعرفي السلوكي</div>
+                        <div class="doctor-contact">
+                            <a href="https://wa.me/201000000002" target="_blank" class="contact-btn whatsapp-btn">
+                                <i class="fab fa-whatsapp"></i> واتساب
+                            </a>
+                            <a href="https://facebook.com/doctor2" target="_blank" class="contact-btn facebook-btn">
+                                <i class="fab fa-facebook"></i> فيسبوك
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Doctor 3 -->
+                    <div class="doctor-card" data-aos="fade-up" data-aos-delay="300">
+                        <div class="doctor-avatar">
+                            <i class="fas fa-user-md"></i>
+                        </div>
+                        <div class="doctor-name">د. محمد خالد</div>
+                        <div class="doctor-specialty">استشاري الطب النفسي</div>
+                        <div class="doctor-experience">خبرة 20 عام في علاج اضطرابات المزاج</div>
+                        <div class="doctor-contact">
+                            <a href="https://wa.me/201000000003" target="_blank" class="contact-btn whatsapp-btn">
+                                <i class="fab fa-whatsapp"></i> واتساب
+                            </a>
+                            <a href="https://facebook.com/doctor3" target="_blank" class="contact-btn facebook-btn">
+                                <i class="fab fa-facebook"></i> فيسبوك
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Doctor 4 -->
+                    <div class="doctor-card" data-aos="fade-up" data-aos-delay="400">
+                        <div class="doctor-avatar">
+                            <i class="fas fa-user-md"></i>
+                        </div>
+                        <div class="doctor-name">د. فاطمة حسن</div>
+                        <div class="doctor-specialty">أخصائية الصحة النفسية</div>
+                        <div class="doctor-experience">خبرة 10 أعوام في دعم الصحة النفسية للشباب</div>
+                        <div class="doctor-contact">
+                            <a href="https://wa.me/201000000004" target="_blank" class="contact-btn whatsapp-btn">
+                                <i class="fab fa-whatsapp"></i> واتساب
+                            </a>
+                            <a href="https://facebook.com/doctor4" target="_blank" class="contact-btn facebook-btn">
+                                <i class="fab fa-facebook"></i> فيسبوك
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Emergency Section -->
+            <div class="emergency-section" data-aos="fade-up" data-aos-delay="500">
+                <i class="fas fa-phone-alt" style="font-size: 3rem; margin-bottom: 1rem; display: block;"></i>
+                <h3>في حالات الطوارئ النفسية</h3>
+                <p>إذا كنت تعاني من أفكار انتحارية أو في حالة طوارئ نفسية، يرجى الاتصال فوراً:</p>
+                <a href="tel:15455" class="emergency-phone">
+                    <i class="fas fa-phone"></i> 15455
+                </a>
+                <p style="margin-top: 1.5rem; font-size: 1rem; opacity: 0.9;">
+                    خط الطوارئ النفسي المتاح 24/7
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <i class="fas fa-heart"></i>
+                    <span>رحلة الوعي</span>
+                </div>
+                <div class="footer-text">
+                    <p>التوعية بالصحة النفسية مسؤولية الجميع</p>
+                </div>
+                <div class="footer-social">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 1000,
+            once: true,
+            offset: 100
+        });
+
+        // Mobile menu toggle
+        const navToggle = document.querySelector('.nav-toggle');
+        const navMenu = document.querySelector('.nav-menu');
+        
+        navToggle.addEventListener('click', function() {
+            navMenu.classList.toggle('active');
+        });
+    </script>
+</body>
+</html>

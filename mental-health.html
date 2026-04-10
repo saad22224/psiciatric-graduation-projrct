@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>المعرفة بالصحة النفسية | رحلة الوعي</title>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-heart"></i>
+                <span>رحلة الوعي</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">الرئيسية</a></li>
+                <li><a href="mental-health.html" class="active">الصحة النفسية</a></li>
+                <li><a href="stigma.html">الوصمة النفسية</a></li>
+                <li><a href="social-distance.html">المسافة الاجتماعية</a></li>
+                <li><a href="attitudes.html">الاتجاهات</a></li>
+                <li><a href="support-center.html">مركز الدعم</a></li>
+            </ul>
+            <div class="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mental Health Section -->
+    <section class="section" style="padding-top: 120px;">
+        <div class="container">
+            <div class="section-header" data-aos="fade-down">
+                <h2 class="section-title">أولًا: المعرفة بالصحة النفسية</h2>
+                <p class="section-subtitle">فهم الصحة النفسية هو أول خطوة للتعافي</p>
+            </div>
+
+            <!-- Session 1 -->
+            <div class="session-card" data-aos="fade-up" data-aos-delay="100">
+                <div class="session-header">
+                    <h3>سيشن 1: "الصحة النفسية مش رفاهية"</h3>
+                    <div class="session-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                </div>
+                <div class="session-content">
+                    <div class="conversation">
+                        <div class="message user" data-aos="fade-right" data-aos-delay="200">
+                            <i class="fas fa-user"></i>
+                            <p>بص… خليني أسألك سؤال بسيط</p>
+                        </div>
+                        <div class="message user" data-aos="fade-right" data-aos-delay="300">
+                            <i class="fas fa-user"></i>
+                            <p>يعني إيه صحة نفسية؟</p>
+                        </div>
+                        <div class="message expert" data-aos="fade-left" data-aos-delay="400">
+                            <i class="fas fa-user-md"></i>
+                            <p>مش بس إنك "كويس وخلاص"</p>
+                        </div>
+                        <div class="message expert" data-aos="fade-left" data-aos-delay="500">
+                            <i class="fas fa-user-md"></i>
+                            <p>الصحة النفسية يعني:</p>
+                            <ul>
+                                <li>تعرف تفهم مشاعرك</li>
+                                <li>تتعامل مع الضغوط</li>
+                                <li>وتكمل حياتك بشكل طبيعي</li>
+                            </ul>
+                        </div>
+                        <div class="message expert warning" data-aos="fade-left" data-aos-delay="600">
+                            <i class="fas fa-exclamation-triangle"></i>
+                            <p>بس خلي بالك:</p>
+                            <ul>
+                                <li>👉 مش كل حزن = اكتئاب</li>
+                                <li>👉 مش كل قلق = مرض</li>
+                            </ul>
+                        </div>
+                        <div class="message expert" data-aos="fade-left" data-aos-delay="700">
+                            <i class="fas fa-user-md"></i>
+                            <p>لكن لو:</p>
+                            <ul>
+                                <li>الحزن طول</li>
+                                <li>الشغف اختفى</li>
+                                <li>النوم بقى متلخبط</li>
+                            </ul>
+                            <p>ساعتها لازم تسأل نفسك:</p>
+                            <p><strong>"أنا محتاج أتكلم مع حد؟"</strong></p>
+                        </div>
+                        <div class="message expert highlight" data-aos="fade-left" data-aos-delay="800">
+                            <i class="fas fa-lightbulb"></i>
+                            <p>💡 طلب المساعدة = وعي مش ضعف</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="session-actions">
+                    <a href="https://www.youtube.com/watch?v=1I9admd4Cxs" target="_blank" class="btn btn-video">
+                        <i class="fas fa-play"></i> شاهد فيديو
+                    </a>
+                    <button class="btn btn-quiz" onclick="startQuiz('session1')">
+                        <i class="fas fa-question-circle"></i> خذ اختبار
+                    </button>
+                </div>
+            </div>
+
+            <!-- Session 2 -->
+            <div class="session-card" data-aos="fade-up" data-aos-delay="200">
+                <div class="session-header">
+                    <h3>سيشن 2: "كسر الخرافات"</h3>
+                    <div class="session-icon">
+                        <i class="fas fa-broken-chain"></i>
+                    </div>
+                </div>
+                <div class="session-content">
+                    <div class="conversation">
+                        <div class="message user" data-aos="fade-right" data-aos-delay="300">
+                            <i class="fas fa-user"></i>
+                            <p>خليني أصحح لك شوية أفكار منتشرة:</p>
+                        </div>
+                        <div class="message myth" data-aos="fade-right" data-aos-delay="400">
+                            <i class="fas fa-times-circle"></i>
+                            <p>"المرض النفسي ضعف" ❌</p>
+                        </div>
+                        <div class="message myth" data-aos="fade-right" data-aos-delay="500">
+                            <i class="fas fa-times-circle"></i>
+                            <p>"العلاج النفسي للمجانين" ❌</p>
+                        </div>
+                        <div class="message myth" data-aos="fade-right" data-aos-delay="600">
+                            <i class="fas fa-times-circle"></i>
+                            <p>"الدواء النفسي إدمان" ❌</p>
+                        </div>
+                        <div class="message expert" data-aos="fade-left" data-aos-delay="700">
+                            <i class="fas fa-user-md"></i>
+                            <p>الحقيقة:</p>
+                            <ul>
+                                <li>✔️ المرض النفسي زي أي مرض</li>
+                                <li>✔️ العلاج بيساعدك تفهم نفسك</li>
+                                <li>✔️ والدواء بيكون تحت إشراف</li>
+                            </ul>
+                        </div>
+                        <div class="message expert highlight" data-aos="fade-left" data-aos-delay="800">
+                            <i class="fas fa-exclamation"></i>
+                            <p>👉 أخطر من المرض… الجهل بيه</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="session-actions">
+                    <a href="https://www.youtube.com/watch?v=2Q_Wx5g33PM" target="_blank" class="btn btn-video">
+                        <i class="fas fa-play"></i> شاهد فيديو
+                    </a>
+                    <button class="btn btn-quiz" onclick="startQuiz('session2')">
+                        <i class="fas fa-question-circle"></i> خذ اختبار
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quiz Modal -->
+    <div id="quizModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="quizTitle">اختبر فهمك</h3>
+                <button class="close-modal" onclick="closeQuiz()">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div id="quizContent"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <i class="fas fa-heart"></i>
+                    <span>رحلة الوعي</span>
+                </div>
+                <div class="footer-text">
+                    <p>التوعية بالصحة النفسية مسؤولية الجميع</p>
+                </div>
+                <div class="footer-social">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 1000,
+            once: true,
+            offset: 100
+        });
+    </script>
+</body>
+</html>
