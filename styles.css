@@ -765,6 +765,64 @@ body {
     box-shadow: 0 5px 15px rgba(233, 30, 99, 0.3);
 }
 
+.footer-supervision {
+    margin: 1.5rem 0;
+    padding: 1rem 2rem;
+    background: linear-gradient(135deg, rgba(233, 30, 99, 0.05), rgba(156, 39, 176, 0.05));
+    border-radius: 50px;
+    border: 2px solid rgba(233, 30, 99, 0.1);
+}
+
+.footer-supervision p {
+    font-size: 1.1rem;
+    color: #4a5568;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 0;
+}
+
+.footer-supervision i {
+    color: #e91e63;
+    font-size: 1.2rem;
+}
+
+.footer-developer {
+    margin-top: 1rem;
+}
+
+.developer-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: #4a5568;
+    text-decoration: none;
+    font-size: 1rem;
+    padding: 10px 20px;
+    border-radius: 25px;
+    background: white;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    border: 2px solid rgba(233, 30, 99, 0.1);
+}
+
+.developer-link:hover {
+    background: linear-gradient(135deg, #e91e63, #ff4081);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 20px rgba(233, 30, 99, 0.3);
+}
+
+.developer-link i {
+    color: #e91e63;
+    animation: heartbeat 1.5s ease-in-out infinite;
+}
+
+.developer-link:hover i {
+    color: white;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
     .nav-menu {
