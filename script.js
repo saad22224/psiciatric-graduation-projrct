@@ -11,11 +11,168 @@ const videoModal = document.getElementById('videoModal');
 const quizContent = document.getElementById('quizContent');
 const videoContent = document.getElementById('videoContent');
 
+// Mental Health Support Messages
+const supportMessages = [
+    "أنت قوي، ويمكنك تجاوز أي صعوبة تواجهها 💪",
+    "مشاعرك مهمة وصحيحة، لا تخف من التعبير عنها ❤️",
+    "كل يوم جديد هو فرصة للبدء من جديد 🌅",
+    "أنت لست وحدك، هناك دائماً من يهتم لأمرك 🤗",
+    "الراحة النفسية حق أساسي من حقوقك ✨",
+    "خطوة بخطوة، ستحقق أهدافك 🚶‍♂️",
+    "استراحتك مهمة، لا تتجاهل احتياجاتك 😌",
+    "أنت تستحق الحب والاحترام 🌹",
+    "الصبر مفتاح الفرج، لا تستعجل النتائج ⏳",
+    "قوتك الحقيقية تكمن في داخلك 💫",
+    "اليوم سيكون أفضل من الأمس 🌟",
+    "أنت تستحق السعادة والسلام النفسي 😊",
+    "لا تخف من طلب المساعدة، هذا قوة لا ضعف 🤝",
+    "كل تحدٍ يجعلك أقوى وأكثر نضجاً 🌱",
+    "أنت فريد ومميز بطريقتك الخاصة 🎨",
+    "التفكير الإيجابي يغير كل شيء 🌈",
+    "أنت أقدر على ما تظن 🎯",
+    "الوقت يشفي كل الجراحات ⏰",
+    "أنت تستحق فرصة جديدة 🔄",
+    "لا تسمح لأحد أن يقلل من قيمتك 👑",
+    "أنت محبوب ومقدر من الكثيرين 💖",
+    "الاستمرارية هي مفتاح النجاح 🔑",
+    "أنت لست أخطاء الماضي، أنت مستقبل مشرق 🌅",
+    "الثقة بالنفس أول خطوة للنجاح ✨",
+    "أنت تستحق أن تكون سعيداً 😄",
+    "لا تقلق من المستقبل، استمتع بالحاضر 🎈",
+    "أنت قادر على تحقيق المعجزات 🌟",
+    "الابتسامة أقوى سلاح لديك 😊",
+    "أنت أفضل مما تظن 🌟",
+    "كل يوم هو بداية جديدة 🌅",
+    "أنت تستاح أن تُسمع وتُفهم 👂",
+    "لا تسمح للقلق أن يسيطر عليك 🧘‍♂️",
+    "أنت مصدر إلهام للآخرين ✨",
+    "الحياة جميلة، استمتع بكل لحظة 🌺",
+    "أنت تستحق الأفضل دائماً 🏆",
+    "التفاؤل طريق السعادة 😊",
+    "أنت لست وحدك في هذا العالم 🌍",
+    "قوتك الداخلية لا حدود لها 💪",
+    "أنت تستحق الراحة والسلام 🕊️",
+    "لا تتجاهل مشاعرك، هي جزء منك ❤️",
+    "أنت قادر على التغيير 🔄",
+    "كل لحظة هي فرصة للنمو 🌱",
+    "أنت تستحق أن تحب نفسك 🤗",
+    "الصحة النفسية مثل الصحة الجسدية، تحتاج للعناية 🏥",
+    "أنت أقوى من الصعوبات 🌟",
+    "لا تخف من أن تكون ضعيفاً، هذا جزء من القوة 💪",
+    "أنت تستحق أن تعيش حياة سعيدة 🌈",
+    "كل تحدي هو فرصة للنمو 🚀",
+    "أنت محاط بالحب والدعم 💖",
+    "لا تسمح لأحد أن يسرق سعادتك 😊",
+    "أنت تستحق أن تكون في سلام مع نفسك 🕊️",
+    "الاستماع لنفسك أهم من الاستماع للآخرين 👂",
+    "أنت قادر على تجاوز أي شيء 💫",
+    "الحياة رحلة، استمتع بها 🌍",
+    "أنت تستحق أن تُحترم 🙏",
+    "لا تخف من التغيير، هو فرصة للنمو 🌱",
+    "أنت مميز بطريقتك الخاصة 🎨",
+    "الراحة النفسية ليست رفاهية، هي ضرورة ✨",
+    "أنت تستحق أن تكون بخير 🌟",
+    "كل يوم هو فرصة لتكون أفضل نسخة من نفسك 🌅",
+    "أنت قادر على تحقيق أحلامك 🎯",
+    "لا تسمح للماضي أن يتحكم في مستقبلك 🚀",
+    "أنت تستحق أن تشعر بالأمان 🛡️",
+    "القوة الحقيقية في الاعتراف بالمشاعر 💪",
+    "أنت تستحق أن تعيش بسلام 🕊️",
+    "كل خطوة صغيرة تقربك من هدفك 🚶‍♂️",
+    "أنت لست أخطاءك، أنت دروسك 📚",
+    "لا تخف من البكاء، هو طريقة للتطهير 😢",
+    "أنت تستحق أن تفرح 🎉",
+    "الصبر والثقة هما مفتاح النجاح ⏳",
+    "أنت قادر على التغلب على أي شيء 💪",
+    "لا تتجاهل احتياجاتك النفسية 🧠",
+    "أنت تستحق أن تحب نفسك أولاً ❤️",
+    "كل يوم هو فرصة جديدة 🌅",
+    "أنت أقوى مما تظن 🌟",
+    "لا تخف من طلب المساعدة، هذا شجاعة 🤝",
+    "أنت تستحق أن تكون سعيداً وصحياً 😊",
+    "التفكير الإيجابي يغير واقعك 🌈",
+    "أنت قادر على صنع فرق 🌟",
+    "لا تسمح لأحد أن يحدد قيمتك 👑",
+    "أنت تستحق الراحة والاسترخاء 😌",
+    "كل تحدي يجعلك أقوى 💪",
+    "أنت لست وحدك في معاناتك 🤗",
+    "الاستمرارية هي سر النجاح 🔑",
+    "أنت تستحق أن تعيش حياة مليئة بالحب 💖",
+    "لا تخف من أن تكون مختلفاً، هذا قوة ✨",
+    "أنت قادر على تحقيق المستحيل 🌟",
+    "الراحة النفسية هي أولويتك 🎯",
+    "أنت تستحق أن تكون في سلام مع نفسك 🕊️",
+    "كل لحظة هي هدية 🎁",
+    "أنت قادر على التغيير الإيجابي 🌱",
+    "لا تسمح للقلق أن يسيطر على حياتك 🧘‍♂️",
+    "أنت تستحق أن تحترم نفسك 🙏",
+    "الحياة جميلة مع نظرة إيجابية 😊",
+    "أنت مصدر قوة للآخرين 💪",
+    "لا تخف من الماضي، استفد منه 📚",
+    "أنت تستحق أن تكون سعيداً دائماً 🌟",
+    "كل يوم هو فرصة للنمو والتحسن 🌱",
+    "أنت قادر على تجاوز أي صعوبة 💫",
+    "الاستماع لقللك مهم جداً ❤️",
+    "أنت تستحق أن تعيش بسلام وسعادة 🕊️",
+    "لا تسمح لأحد أن يسرق طاقتك الإيجابية ✨",
+    "أنت قادر على صنع مستقبل أفضل 🌟"
+];
+
+// Random Toast Message System
+let toastInterval;
+let usedMessages = [];
+
+function getRandomSupportMessage() {
+    if (usedMessages.length === supportMessages.length) {
+        usedMessages = []; // Reset when all messages are used
+    }
+    
+    let availableMessages = supportMessages.filter(msg => !usedMessages.includes(msg));
+    let randomIndex = Math.floor(Math.random() * availableMessages.length);
+    let message = availableMessages[randomIndex];
+    
+    usedMessages.push(message);
+    return message;
+}
+
+function showSupportToast() {
+    const message = getRandomSupportMessage();
+    
+    Toastify({
+        text: message,
+        duration: 5000,
+        gravity: "top",
+        position: "left", 
+        style: {
+            background: "linear-gradient(135deg, #e91e63, #9c27b0)",
+            borderRadius: "12px",
+            boxShadow: "0 8px 25px rgba(233, 30, 99, 0.3)",
+            fontFamily: "Tajawal, sans-serif",
+            fontSize: "16px",
+            padding: "16px 24px",
+            textAlign: "right",
+            direction: "rtl"
+        },
+        onClick: function(){} 
+    }).showToast();
+}
+
+function startSupportMessages() {
+    // Show first message immediately
+    setTimeout(showSupportToast, 2000);
+    
+    // Then show random messages every 5-10 seconds
+    toastInterval = setInterval(() => {
+        showSupportToast();
+    }, Math.random() * 5000 + 5000); // Random between 5-10 seconds
+}
+
 // Initialize
 document.addEventListener('DOMContentLoaded', function() {
     initializeNavigation();
     initializeScrollEffects();
     initializeAnimations();
+    startSupportMessages(); // Start the support message system
     initializeAOS();
 });
 
@@ -275,25 +432,30 @@ function closeQuiz() {
     quizAnswers = {};
 }
 
-// Video Functions - Open in new window
+// Video Functions - Open modal with local video
 function playVideo(sessionId) {
-    // Video URLs for each session
-    const videoUrls = {
-        'session1': 'https://www.youtube.com/watch?v=1I9admd4Cxs',
-        'session2': 'https://www.youtube.com/watch?v=2Q_Wx5g33PM',
-        'session3': 'https://www.youtube.com/watch?v=1I9admd4Cxs',
-        'session4': 'https://www.youtube.com/watch?v=2Q_Wx5g33PM',
-        'session5': 'https://www.youtube.com/watch?v=1I9admd4Cxs',
-        'session6': 'https://www.youtube.com/watch?v=2Q_Wx5g33PM',
-        'session7': 'https://www.youtube.com/watch?v=2Q_Wx5g33PM',
-        'session8': 'https://www.youtube.com/watch?v=1I9admd4Cxs',
-        'session9': 'https://www.youtube.com/watch?v=2Q_Wx5g33PM'
-    };
+    const modal = document.getElementById('videoModal');
+    const modalContent = modal.querySelector('.modal-content');
     
-    const url = videoUrls[sessionId] || 'https://www.youtube.com/watch?v=1I9admd4Cxs';
+    // Set video content with local video
+    modalContent.innerHTML = `
+        <div class="modal-header">
+            <h3 class="modal-title">فيديو - ${getSessionTitle(sessionId)}</h3>
+            <span class="close-modal" onclick="closeVideo()">&times;</span>
+        </div>
+        <div class="modal-body">
+            <div class="video-container">
+                <video controls autoplay style="width: 100%; max-width: 100%; border-radius: 10px;">
+                    <source src="hero_khamsat-30996c078e7d2c8ea951fb0f827908119f08ce92c80b0bec2caea193d155fafa.mp4" type="video/mp4">
+                    متصفحك لا يدعم الفيديو.
+                </video>
+            </div>
+        </div>
+    `;
     
-    // Open video in new window
-    window.open(url, '_blank', 'width=1000,height=600,scrollbars=yes,resizable=yes');
+    // Show modal
+    modal.style.display = 'flex';
+    document.body.style.overflow = 'hidden';
 }
 
 function closeVideo() {

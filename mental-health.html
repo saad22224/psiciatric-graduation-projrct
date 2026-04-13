@@ -9,6 +9,8 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
     <meta name="theme-color" content="#e91e63">
 </head>
 <body>
@@ -99,9 +101,9 @@
                     </div>
                 </div>
                 <div class="session-actions">
-                    <a href="https://www.youtube.com/watch?v=1I9admd4Cxs" target="_blank" class="btn btn-video">
+                    <button class="btn btn-video" onclick="playVideo('session1')">
                         <i class="fas fa-play"></i> شاهد فيديو
-                    </a>
+                    </button>
                     <button class="btn btn-quiz" onclick="startQuiz('session1')">
                         <i class="fas fa-question-circle"></i> خذ اختبار
                     </button>
@@ -150,9 +152,9 @@
                     </div>
                 </div>
                 <div class="session-actions">
-                    <a href="https://www.youtube.com/watch?v=2Q_Wx5g33PM" target="_blank" class="btn btn-video">
+                    <button class="btn btn-video" onclick="playVideo('session2')">
                         <i class="fas fa-play"></i> شاهد فيديو
-                    </a>
+                    </button>
                     <button class="btn btn-quiz" onclick="startQuiz('session2')">
                         <i class="fas fa-question-circle"></i> خذ اختبار
                     </button>
@@ -199,6 +201,19 @@
             </div>
         </div>
     </footer>
+
+    <!-- Video Modal -->
+    <div id="videoModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">فيديو</h3>
+                <span class="close-modal" onclick="closeVideo()">&times;</span>
+            </div>
+            <div class="modal-body">
+                <!-- Video content will be inserted here -->
+            </div>
+        </div>
+    </div>
 
     <script src="script.js"></script>
     <script>
