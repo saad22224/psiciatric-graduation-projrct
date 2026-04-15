@@ -175,9 +175,26 @@ body {
 
 .hero-subtitle {
     font-size: 1.5rem;
-    margin-bottom: 2.5rem;
+    margin-bottom: 1rem;
     color: #4a5568;
     font-weight: 500;
+}
+
+.hero-tagline {
+    font-size: 1.3rem;
+    margin-bottom: 2.5rem;
+    color: #2d3748;
+    font-weight: 600;
+    background: linear-gradient(135deg, #4caf50, #009688);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.8; transform: scale(1.02); }
 }
 
 .hero-buttons {
@@ -1355,4 +1372,322 @@ body {
 
 .nav-card-highlight:hover {
     border-color: #e91e63;
+}
+
+/* Breathing Exercise Section */
+.breathing-section {
+    background: linear-gradient(135deg, rgba(0, 188, 212, 0.05), rgba(76, 175, 80, 0.05)) !important;
+    overflow-x: hidden;
+    position: relative;
+}
+
+.breathing-container {
+    display: flex;
+    justify-content: center;
+    padding: 2rem 0;
+    overflow-x: hidden;
+}
+
+.breathing-card {
+    background: white;
+    border-radius: 30px;
+    padding: 3rem;
+    box-shadow: 0 20px 60px rgba(0, 188, 212, 0.15);
+    text-align: center;
+    max-width: 500px;
+    width: 100%;
+    border: 2px solid rgba(0, 188, 212, 0.1);
+}
+
+.breathing-visual {
+    position: relative;
+    height: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+
+.breathing-circle {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #00bcd4, #4caf50);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 40px rgba(0, 188, 212, 0.3);
+}
+
+.breathing-circle.inhale {
+    animation: inhale 4s ease-in-out forwards;
+}
+
+.breathing-circle.exhale {
+    animation: exhale 4s ease-in-out forwards;
+}
+
+.breathing-circle.hold {
+    animation: hold 2s ease-in-out forwards;
+}
+
+@keyframes inhale {
+    0% { transform: scale(1); box-shadow: 0 10px 40px rgba(0, 188, 212, 0.3); }
+    100% { transform: scale(1.5); box-shadow: 0 20px 60px rgba(0, 188, 212, 0.5); }
+}
+
+@keyframes exhale {
+    0% { transform: scale(1.5); box-shadow: 0 20px 60px rgba(76, 175, 80, 0.5); }
+    100% { transform: scale(1); box-shadow: 0 10px 40px rgba(76, 175, 80, 0.3); }
+}
+
+@keyframes hold {
+    0%, 100% { transform: scale(1.5); }
+    50% { transform: scale(1.5); }
+}
+
+.breathing-inner {
+    text-align: center;
+    color: white;
+}
+
+.breathing-text {
+    display: block;
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.breathing-icon {
+    font-size: 2.5rem;
+    opacity: 0.9;
+}
+
+.breathing-particles {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+}
+
+.breathing-particles span {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: rgba(0, 188, 212, 0.3);
+    border-radius: 50%;
+    animation: particleFloat 3s ease-in-out infinite;
+}
+
+.breathing-particles span:nth-child(1) { top: 20%; left: 20%; animation-delay: 0s; }
+.breathing-particles span:nth-child(2) { top: 30%; right: 20%; animation-delay: 0.5s; }
+.breathing-particles span:nth-child(3) { bottom: 30%; left: 15%; animation-delay: 1s; }
+.breathing-particles span:nth-child(4) { bottom: 20%; right: 25%; animation-delay: 1.5s; }
+.breathing-particles span:nth-child(5) { top: 50%; left: 10%; animation-delay: 2s; }
+
+@keyframes particleFloat {
+    0%, 100% { transform: translateY(0) scale(1); opacity: 0.3; }
+    50% { transform: translateY(-20px) scale(1.2); opacity: 0.6; }
+}
+
+.breathing-controls {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+}
+
+.btn-breathing {
+    background: linear-gradient(135deg, #00bcd4, #4caf50);
+    color: white;
+    padding: 15px 40px;
+    font-size: 1.1rem;
+    box-shadow: 0 6px 20px rgba(0, 188, 212, 0.3);
+}
+
+.btn-breathing:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 10px 30px rgba(0, 188, 212, 0.4);
+}
+
+.btn-breathing:disabled {
+    background: linear-gradient(135deg, #ccc, #999);
+    cursor: not-allowed;
+    transform: none;
+}
+
+.breathing-instruction {
+    color: #4a5568;
+    font-size: 1rem;
+    margin: 0;
+}
+
+/* Emotion Modal Styles */
+.emotion-modal-content {
+    max-width: 500px;
+}
+
+.emotion-header {
+    background: linear-gradient(135deg, #ff9800, #f57c00);
+}
+
+.emotion-body {
+    padding: 2rem;
+}
+
+.emotion-intro {
+    text-align: center;
+    font-size: 1.1rem;
+    color: #4a5568;
+    margin-bottom: 2rem;
+}
+
+.emotions-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+}
+
+.emotion-btn {
+    background: white;
+    border: 2px solid #e0e0e0;
+    border-radius: 20px;
+    padding: 1.5rem 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.emotion-btn:hover {
+    border-color: #ff9800;
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(255, 152, 0, 0.2);
+}
+
+.emotion-emoji {
+    font-size: 2.5rem;
+}
+
+.emotion-label {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #2d3748;
+}
+
+/* Advice Modal Styles */
+.advice-modal-content {
+    max-width: 550px;
+}
+
+.advice-header {
+    background: linear-gradient(135deg, #4caf50, #009688);
+}
+
+.advice-body {
+    padding: 2rem;
+    text-align: center;
+}
+
+.advice-content {
+    margin-bottom: 2rem;
+}
+
+.advice-emoji {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    display: block;
+}
+
+.advice-text {
+    font-size: 1.2rem;
+    color: #2d3748;
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+}
+
+.advice-quote {
+    background: linear-gradient(135deg, rgba(76, 175, 80, 0.1), rgba(0, 150, 136, 0.1));
+    border-right: 4px solid #4caf50;
+    padding: 1.5rem;
+    border-radius: 15px;
+    font-style: italic;
+    color: #4a5568;
+    text-align: right;
+}
+
+.advice-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 1.5rem;
+}
+
+/* Responsive for breathing and emotions */
+@media (max-width: 768px) {
+    .breathing-card {
+        padding: 2rem 1rem;
+        margin: 0 10px;
+    }
+    
+    .breathing-circle {
+        width: 140px;
+        height: 140px;
+    }
+    
+    @keyframes inhale {
+        0% { transform: scale(1); box-shadow: 0 10px 40px rgba(0, 188, 212, 0.3); }
+        100% { transform: scale(1.3); box-shadow: 0 20px 60px rgba(0, 188, 212, 0.5); }
+    }
+    
+    @keyframes exhale {
+        0% { transform: scale(1.3); box-shadow: 0 20px 60px rgba(76, 175, 80, 0.5); }
+        100% { transform: scale(1); box-shadow: 0 10px 40px rgba(76, 175, 80, 0.3); }
+    }
+    
+    @keyframes hold {
+        0%, 100% { transform: scale(1.3); }
+        50% { transform: scale(1.3); }
+    }
+    
+    .breathing-text {
+        font-size: 1rem;
+    }
+    
+    .breathing-icon {
+        font-size: 2rem;
+    }
+    
+    .breathing-visual {
+        height: 200px;
+    }
+    
+    .emotions-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.75rem;
+    }
+    
+    .emotion-btn {
+        padding: 1rem 0.5rem;
+    }
+    
+    .emotion-emoji {
+        font-size: 1.8rem;
+    }
+    
+    .emotion-label {
+        font-size: 0.9rem;
+    }
+    
+    .emotion-modal-content,
+    .advice-modal-content {
+        width: 95%;
+        margin: 5% auto;
+    }
 }

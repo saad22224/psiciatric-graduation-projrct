@@ -158,13 +158,13 @@ function showSupportToast() {
 }
 
 function startSupportMessages() {
-    // Show first message immediately
-    setTimeout(showSupportToast, 2000);
+    // Show first message after 3 seconds
+    setTimeout(showSupportToast, 3000);
     
-    // Then show random messages every 5-10 seconds
+    // Then show random messages every minute (60000 ms)
     toastInterval = setInterval(() => {
         showSupportToast();
-    }, Math.random() * 5000 + 5000); // Random between 5-10 seconds
+    }, 60000); // Every 1 minute
 }
 
 // Initialize
@@ -224,17 +224,6 @@ function initializeNavigation() {
 
 // Scroll Effects
 function initializeScrollEffects() {
-    // Parallax effect for hero section
-    window.addEventListener('scroll', function() {
-        const scrolled = window.pageYOffset;
-        const hero = document.querySelector('.hero');
-        const heroContent = document.querySelector('.hero-content');
-        
-        if (hero && heroContent) {
-            hero.style.transform = `translateY(${scrolled * 0.5}px)`;
-            heroContent.style.transform = `translateY(${scrolled * 0.3}px)`;
-        }
-    });
 
     // Fade in elements on scroll
     const observerOptions = {
@@ -928,3 +917,190 @@ const notificationCSS = `
 const styleSheet = document.createElement('style');
 styleSheet.textContent = notificationCSS;
 document.head.appendChild(styleSheet);
+
+// Breathing Exercise Functions
+let breathingInterval;
+let isBreathing = false;
+let breathingCycle = 0;
+const totalCycles = 3;
+
+function startBreathingExercise() {
+    if (isBreathing) return;
+    
+    isBreathing = true;
+    breathingCycle = 0;
+    const btn = document.getElementById('startBreathingBtn');
+    const circle = document.getElementById('breathingCircle');
+    const text = document.getElementById('breathingText');
+    const instruction = document.getElementById('breathingInstruction');
+    
+    btn.disabled = true;
+    btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> جاري التمرين...';
+    instruction.textContent = 'اتبع التنفس مع الدائرة... خد نفس عميق';
+    
+    runBreathingCycle(circle, text, instruction);
+}
+
+function runBreathingCycle(circle, text, instruction) {
+    if (breathingCycle >= totalCycles) {
+        finishBreathingExercise();
+        return;
+    }
+    
+    breathingCycle++;
+    
+    // Inhale phase (4 seconds)
+    circle.className = 'breathing-circle inhale';
+    text.textContent = 'شهيق...';
+    instruction.textContent = `خد نفس عميق من خشمك (الدورة ${breathingCycle} من ${totalCycles})`;
+    
+    setTimeout(() => {
+        // Hold phase (2 seconds)
+        circle.className = 'breathing-circle hold';
+        text.textContent = 'ثبت...';
+        instruction.textContent = 'ابقى كدا شوية';
+        
+        setTimeout(() => {
+            // Exhale phase (4 seconds)
+            circle.className = 'breathing-circle exhale';
+            text.textContent = 'زفير...';
+            instruction.textContent = 'طلع النفس ببطء من بؤقك';
+            
+            setTimeout(() => {
+                // Small pause before next cycle
+                circle.className = 'breathing-circle';
+                text.textContent = 'استرخِ';
+                instruction.textContent = 'استرح لحظة';
+                
+                setTimeout(() => {
+                    runBreathingCycle(circle, text, instruction);
+                }, 1000);
+            }, 4000);
+        }, 2000);
+    }, 4000);
+}
+
+function finishBreathingExercise() {
+    isBreathing = false;
+    const btn = document.getElementById('startBreathingBtn');
+    const circle = document.getElementById('breathingCircle');
+    const text = document.getElementById('breathingText');
+    const instruction = document.getElementById('breathingInstruction');
+    
+    circle.className = 'breathing-circle';
+    text.textContent = 'أحسنت!';
+    instruction.textContent = 'تم التمرين بنجاح. كيف تشعر الآن؟';
+    btn.disabled = false;
+    btn.innerHTML = '<i class="fas fa-redo"></i> كرر التمرين';
+    
+    // Show emotion modal after 1 second
+    setTimeout(() => {
+        showEmotionModal();
+    }, 1000);
+}
+
+// Emotion and Advice Modal Functions
+const emotionAdvice = {
+    happy: {
+        emoji: '😊',
+        title: 'سعيد',
+        text: 'رائع! فرحان إنك حس بالسعادة. استمتع باللحظة وحافظ على الطاقة الإيجابية دي.',
+        quote: '"السعادة الحقيقية تكمن في الامتنان على ما لديك"'
+    },
+    sad: {
+        emoji: '😢',
+        title: 'حزين',
+        text: 'مشاعرك مهمة والحزن جزء طبيعي من الحياة. خد وقتك، ابكي لو محتاج، ومتنساش إن ده هيمشي.',
+        quote: '"بعد كل ليلة ليل، صبح لازم يجي. أنت أقوى منك تتخيل"'
+    },
+    anxious: {
+        emoji: '😰',
+        title: 'قلقان',
+        text: 'القلق طبيعي. جرب تكرر التمرين كمان مرة، وافكر في الحاجة الحلوة اللي حصلتلك النهاردة.',
+        quote: '"القلق مش هيموتك، وهو مش هيستمر للأبد. خد نفس عميق وأنت كدا كدا كويس"'
+    },
+    tired: {
+        emoji: '😴',
+        title: 'متعب',
+        text: 'التعب بيحتاج راحة. متضغطش على نفسك، خد قيلولة أو نام بدري النهاردة. جسمك بيستحق.',
+        quote: '"الراحة مش كسل، هي استعادة للطاقة عشان تكمل بقوة"'
+    },
+    stressed: {
+        emoji: '😫',
+        title: 'مضغوط',
+        text: 'الضغط صعب بجد. جرب تكتب اللي مضايقك على ورقة، أو اتكلم مع حد تثق فيه. مش لازم تشيل كل حاجة لوحدك.',
+        quote: '"التقسيم بيسهل المهمة. كل خطوة صغيرة بتقربك من الهدف"'
+    },
+    calm: {
+        emoji: '🧘',
+        title: 'هادي',
+        text: 'الهدوء نعمة! استمتع بالسكينة دي وحاول تحفظها. التمرين نجح في تهديتك.',
+        quote: '"السلام الداخلي أغلى من أي شيء تاني في الدنيا"'
+    }
+};
+
+function showEmotionModal() {
+    const modal = document.getElementById('emotionModal');
+    modal.style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+    openModalWithAnimation(modal);
+}
+
+function closeEmotionModal() {
+    const modal = document.getElementById('emotionModal');
+    closeModalWithAnimation(modal);
+    setTimeout(() => {
+        modal.style.display = 'none';
+        document.body.style.overflow = 'auto';
+    }, 300);
+}
+
+function selectEmotion(emotion) {
+    closeEmotionModal();
+    
+    setTimeout(() => {
+        showAdviceModal(emotion);
+    }, 300);
+}
+
+function showAdviceModal(emotion) {
+    const modal = document.getElementById('adviceModal');
+    const title = document.getElementById('adviceTitle');
+    const content = document.getElementById('adviceContent');
+    const advice = emotionAdvice[emotion];
+    
+    if (!advice) return;
+    
+    title.textContent = `نصيحة للحالة: ${advice.title}`;
+    content.innerHTML = `
+        <span class="advice-emoji">${advice.emoji}</span>
+        <p class="advice-text">${advice.text}</p>
+        <div class="advice-quote">${advice.quote}</div>
+    `;
+    
+    modal.style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+    openModalWithAnimation(modal);
+}
+
+function closeAdviceModal() {
+    const modal = document.getElementById('adviceModal');
+    closeModalWithAnimation(modal);
+    setTimeout(() => {
+        modal.style.display = 'none';
+        document.body.style.overflow = 'auto';
+    }, 300);
+}
+
+// Modal close on outside click for new modals
+window.addEventListener('click', function(event) {
+    const emotionModal = document.getElementById('emotionModal');
+    const adviceModal = document.getElementById('adviceModal');
+    
+    if (event.target === emotionModal) {
+        closeEmotionModal();
+    }
+    if (event.target === adviceModal) {
+        closeAdviceModal();
+    }
+});

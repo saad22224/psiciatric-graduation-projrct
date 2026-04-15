@@ -41,6 +41,7 @@
         <div class="hero-content">
             <h1 class="hero-title">التوعية بالصحة النفسية</h1>
             <p class="hero-subtitle">نفهم... ندعم... نغير</p>
+            <p class="hero-tagline">رحلتك للسكينة تبدأ من هنا 🌿</p>
             <div class="hero-buttons">
                 <a href="mental-health.html" class="btn btn-primary">ابدأ الرحلة</a>
                 <a href="support-center.html" class="btn btn-secondary">مركز الدعم</a>
@@ -54,6 +55,95 @@
             </div>
         </div>
     </section>
+
+    <!-- Breathing Exercise Section -->
+    <section class="section breathing-section">
+        <div class="container">
+            <div class="section-header" data-aos="fade-down">
+                <h2 class="section-title">تمرين التنفس</h2>
+                <p class="section-subtitle">خذ لحظة من الهدوء.. تنفس deeply واسترخِ</p>
+            </div>
+            
+            <div class="breathing-container" data-aos="fade-up">
+                <div class="breathing-card">
+                    <div class="breathing-visual">
+                        <div class="breathing-circle" id="breathingCircle">
+                            <div class="breathing-inner">
+                                <span class="breathing-text" id="breathingText">اضغط للبدء</span>
+                                <i class="fas fa-lungs breathing-icon"></i>
+                            </div>
+                        </div>
+                        <div class="breathing-particles">
+                            <span></span><span></span><span></span><span></span><span></span>
+                        </div>
+                    </div>
+                    <div class="breathing-controls">
+                        <button class="btn btn-breathing" id="startBreathingBtn" onclick="startBreathingExercise()">
+                            <i class="fas fa-play"></i> ابدأ تمرين التنفس
+                        </button>
+                        <p class="breathing-instruction" id="breathingInstruction">اضغط الزر لبدء تمرين التنفس المهدئ</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Emotion Check Modal -->
+    <div id="emotionModal" class="modal emotion-modal">
+        <div class="modal-content emotion-modal-content">
+            <div class="modal-header emotion-header">
+                <h3 class="modal-title">كيف تشعر الآن؟</h3>
+                <span class="close-modal" onclick="closeEmotionModal()">&times;</span>
+            </div>
+            <div class="modal-body emotion-body">
+                <p class="emotion-intro">اختر الإيموشنز اللي يعبر عن شعورك دلوقتي:</p>
+                <div class="emotions-grid">
+                    <button class="emotion-btn" data-emotion="happy" onclick="selectEmotion('happy')">
+                        <span class="emotion-emoji">😊</span>
+                        <span class="emotion-label">سعيد</span>
+                    </button>
+                    <button class="emotion-btn" data-emotion="sad" onclick="selectEmotion('sad')">
+                        <span class="emotion-emoji">😢</span>
+                        <span class="emotion-label">حزين</span>
+                    </button>
+                    <button class="emotion-btn" data-emotion="anxious" onclick="selectEmotion('anxious')">
+                        <span class="emotion-emoji">😰</span>
+                        <span class="emotion-label">قلقان</span>
+                    </button>
+                    <button class="emotion-btn" data-emotion="tired" onclick="selectEmotion('tired')">
+                        <span class="emotion-emoji">😴</span>
+                        <span class="emotion-label">متعب</span>
+                    </button>
+                    <button class="emotion-btn" data-emotion="stressed" onclick="selectEmotion('stressed')">
+                        <span class="emotion-emoji">😫</span>
+                        <span class="emotion-label">مضغوط</span>
+                    </button>
+                    <button class="emotion-btn" data-emotion="calm" onclick="selectEmotion('calm')">
+                        <span class="emotion-emoji">🧘</span>
+                        <span class="emotion-label">هادي</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Advice Modal -->
+    <div id="adviceModal" class="modal advice-modal">
+        <div class="modal-content advice-modal-content">
+            <div class="modal-header advice-header">
+                <h3 class="modal-title" id="adviceTitle">نصيحة ليك</h3>
+                <span class="close-modal" onclick="closeAdviceModal()">&times;</span>
+            </div>
+            <div class="modal-body advice-body">
+                <div class="advice-content" id="adviceContent">
+                    <!-- Advice content will be inserted here -->
+                </div>
+                <button class="btn btn-primary" onclick="closeAdviceModal()">
+                    <i class="fas fa-check"></i> فهمت، شكراً
+                </button>
+            </div>
+        </div>
+    </div>
 
     <!-- Mental Health Introduction Section -->
     <section class="section" style="background: linear-gradient(135deg, rgba(255,255,255,0.98), rgba(252,228,236,0.5));">
@@ -360,6 +450,7 @@
         </div>
     </div>
 
+    <script src="script.js"></script>
     <script>
         // Mobile menu toggle
         const navToggle = document.querySelector('.nav-toggle');
