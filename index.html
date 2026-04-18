@@ -39,9 +39,21 @@
     <!-- Hero Section -->
     <section id="home" class="hero">
         <div class="hero-content">
-            <h1 class="hero-title">التوعية بالصحة النفسية</h1>
+            <div class="hero-logos">
+                <img src="شعار_وعي_للأهتمام_بالصحة_النفسية-removebg-preview.webp" alt="وعي" class="hero-logo-img">
+            </div>
+            <h1 class="hero-title">"وعي بلا وصمة" (مساحة نفسية آمنة)</h1>
             <p class="hero-subtitle">نفهم... ندعم... نغير</p>
-            <p class="hero-tagline">رحلتك للسكينة تبدأ من هنا 🌿</p>
+            <div class="hero-team-intro">
+                <p class="team-text">طلاب الفرقة الرابعة - جروب 10</p>
+                <p class="team-text">كلية تمريض - جامعة دمنهور</p>
+                <p class="team-text">تثقيف نفسي عن الصحة النفسية</p>
+                <p class="supervisors">تحت إشراف: د. إيمان سعد هليل & د. وفاء سامي عبدالستار مدين</p>
+            </div>
+            <div class="safe-space-intro">
+                <p class="safe-space-text">مساحة آمنة نتكلم فيها عن صحتك النفسية بصراحة وبدون حرج</p>
+                <p class="safe-space-sub">مش لازم تكون مريض عشان تهتم بنفسك. الصحة النفسية زي الصحة الجسدية بالظبط، وكلنا محتاجين نهتم بيها يومياً. يلا بينا نبدأ الرحلة سوا!</p>
+            </div>
             <div class="hero-buttons">
                 <a href="mental-health.html" class="btn btn-primary">ابدأ الرحلة</a>
                 <a href="support-center.html" class="btn btn-secondary">مركز الدعم</a>
@@ -55,95 +67,6 @@
             </div>
         </div>
     </section>
-
-    <!-- Breathing Exercise Section -->
-    <section class="section breathing-section">
-        <div class="container">
-            <div class="section-header" data-aos="fade-down">
-                <h2 class="section-title">تمرين التنفس</h2>
-                <p class="section-subtitle">خذ لحظة من الهدوء.. تنفس deeply واسترخِ</p>
-            </div>
-            
-            <div class="breathing-container" data-aos="fade-up">
-                <div class="breathing-card">
-                    <div class="breathing-visual">
-                        <div class="breathing-circle" id="breathingCircle">
-                            <div class="breathing-inner">
-                                <span class="breathing-text" id="breathingText">اضغط للبدء</span>
-                                <i class="fas fa-lungs breathing-icon"></i>
-                            </div>
-                        </div>
-                        <div class="breathing-particles">
-                            <span></span><span></span><span></span><span></span><span></span>
-                        </div>
-                    </div>
-                    <div class="breathing-controls">
-                        <button class="btn btn-breathing" id="startBreathingBtn" onclick="startBreathingExercise()">
-                            <i class="fas fa-play"></i> ابدأ تمرين التنفس
-                        </button>
-                        <p class="breathing-instruction" id="breathingInstruction">اضغط الزر لبدء تمرين التنفس المهدئ</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Emotion Check Modal -->
-    <div id="emotionModal" class="modal emotion-modal">
-        <div class="modal-content emotion-modal-content">
-            <div class="modal-header emotion-header">
-                <h3 class="modal-title">كيف تشعر الآن؟</h3>
-                <span class="close-modal" onclick="closeEmotionModal()">&times;</span>
-            </div>
-            <div class="modal-body emotion-body">
-                <p class="emotion-intro">اختر الإيموشنز اللي يعبر عن شعورك دلوقتي:</p>
-                <div class="emotions-grid">
-                    <button class="emotion-btn" data-emotion="happy" onclick="selectEmotion('happy')">
-                        <span class="emotion-emoji">😊</span>
-                        <span class="emotion-label">سعيد</span>
-                    </button>
-                    <button class="emotion-btn" data-emotion="sad" onclick="selectEmotion('sad')">
-                        <span class="emotion-emoji">😢</span>
-                        <span class="emotion-label">حزين</span>
-                    </button>
-                    <button class="emotion-btn" data-emotion="anxious" onclick="selectEmotion('anxious')">
-                        <span class="emotion-emoji">😰</span>
-                        <span class="emotion-label">قلقان</span>
-                    </button>
-                    <button class="emotion-btn" data-emotion="tired" onclick="selectEmotion('tired')">
-                        <span class="emotion-emoji">😴</span>
-                        <span class="emotion-label">متعب</span>
-                    </button>
-                    <button class="emotion-btn" data-emotion="stressed" onclick="selectEmotion('stressed')">
-                        <span class="emotion-emoji">😫</span>
-                        <span class="emotion-label">مضغوط</span>
-                    </button>
-                    <button class="emotion-btn" data-emotion="calm" onclick="selectEmotion('calm')">
-                        <span class="emotion-emoji">🧘</span>
-                        <span class="emotion-label">هادي</span>
-                    </button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Advice Modal -->
-    <div id="adviceModal" class="modal advice-modal">
-        <div class="modal-content advice-modal-content">
-            <div class="modal-header advice-header">
-                <h3 class="modal-title" id="adviceTitle">نصيحة ليك</h3>
-                <span class="close-modal" onclick="closeAdviceModal()">&times;</span>
-            </div>
-            <div class="modal-body advice-body">
-                <div class="advice-content" id="adviceContent">
-                    <!-- Advice content will be inserted here -->
-                </div>
-                <button class="btn btn-primary" onclick="closeAdviceModal()">
-                    <i class="fas fa-check"></i> فهمت، شكراً
-                </button>
-            </div>
-        </div>
-    </div>
 
     <!-- Mental Health Introduction Section -->
     <section class="section" style="background: linear-gradient(135deg, rgba(255,255,255,0.98), rgba(252,228,236,0.5));">
@@ -356,6 +279,185 @@
         </div>
     </section>
 
+    <!-- Breathing Exercise Section -->
+    <section class="section breathing-section">
+        <div class="container">
+            <div class="section-header" data-aos="fade-down">
+                <h2 class="section-title">أدوات بتفيدك وتقدر تعملها دلوقتي</h2>
+                <p class="section-subtitle">مش لازم تستنى وهي تمارين التنفس</p>
+            </div>
+            
+            <div class="breathing-container" data-aos="fade-up">
+                <div class="breathing-card">
+                    <div class="breathing-visual">
+                        <div class="breathing-circle" id="breathingCircle">
+                            <div class="breathing-inner">
+                                <span class="breathing-text" id="breathingText">اضغط للبدء</span>
+                                <i class="fas fa-lungs breathing-icon"></i>
+                            </div>
+                        </div>
+                        <div class="breathing-particles">
+                            <span></span><span></span><span></span><span></span><span></span>
+                        </div>
+                    </div>
+                    <div class="breathing-controls">
+                        <button class="btn btn-breathing" id="startBreathingBtn" onclick="startBreathingExercise()">
+                            <i class="fas fa-play"></i> ابدأ تمرين التنفس
+                        </button>
+                        <p class="breathing-instruction" id="breathingInstruction">اضغط الزر لبدء تمرين التنفس</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mood Check Section -->
+    <section class="section mood-section">
+        <div class="container">
+            <div class="section-header" data-aos="fade-down">
+                <h2 class="section-title">ازاي حاسس دلوقت؟</h2>
+                <p class="section-subtitle">اختار مزاجك وهقولك تعمل اي</p>
+            </div>
+            
+            <div class="mood-container" data-aos="fade-up">
+                <div class="moods-grid">
+                    <button class="mood-btn" data-mood="happy" onclick="selectMood('happy')">
+                        <span class="mood-emoji">😄</span>
+                        <span class="mood-label">مبسوط</span>
+                    </button>
+                    <button class="mood-btn" data-mood="active" onclick="selectMood('active')">
+                        <span class="mood-emoji">🤩</span>
+                        <span class="mood-label">نشيط</span>
+                    </button>
+                    <button class="mood-btn" data-mood="annoyed" onclick="selectMood('annoyed')">
+                        <span class="mood-emoji">😣</span>
+                        <span class="mood-label">متضايق</span>
+                    </button>
+                    <button class="mood-btn" data-mood="anxious" onclick="selectMood('anxious')">
+                        <span class="mood-emoji">😰</span>
+                        <span class="mood-label">قلقان</span>
+                    </button>
+                    <button class="mood-btn" data-mood="calm" onclick="selectMood('calm')">
+                        <span class="mood-emoji">😊</span>
+                        <span class="mood-label">هادي</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mood Response Modal -->
+    <div id="moodModal" class="modal mood-modal">
+        <div class="modal-content mood-modal-content">
+            <div class="modal-header mood-header">
+                <h3 class="modal-title" id="moodTitle">نصيحة ليك</h3>
+                <span class="close-modal" onclick="closeMoodModal()">&times;</span>
+            </div>
+            <div class="modal-body mood-body">
+                <div class="mood-response-content" id="moodContent">
+                    <!-- Content will be inserted here -->
+                </div>
+                <button class="btn btn-primary" onclick="closeMoodModal()">
+                    <i class="fas fa-check"></i> شكراً
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Advice from the Heart Section -->
+    <section class="section advice-heart-section">
+        <div class="container">
+            <div class="section-header" data-aos="fade-down">
+                <h2 class="section-title">نصايح من القلب</h2>
+                <p class="section-subtitle">حاجات تغير حياتك لو طبقتها</p>
+            </div>
+            
+            <div class="advice-intro" data-aos="fade-up">
+                <p>نصايح بسيطة بس بتفرق. اضغط على اي واحدة عشان تعرف التفاصيل</p>
+            </div>
+            
+            <div class="advice-cards-grid">
+                <!-- Sleep Advice -->
+                <div class="advice-card" data-aos="fade-up" data-aos-delay="100" onclick="toggleAdvice('sleep', event)">
+                    <div class="advice-card-header">
+                        <i class="fas fa-bed"></i>
+                        <h3>نومك هو سر طاقتك</h3>
+                        <i class="fas fa-chevron-down advice-toggle"></i>
+                    </div>
+                    <div class="advice-card-content" id="advice-sleep">
+                        <p>النوم الكافي (7-9) ساعات بيأثر على مزاجك اكتر مما تتخيل. جرب تثبت وقت نوم واستيقاظ يومياً وابعد عن الشاشات ساعة قبل النوم.</p>
+                        <p>لو عندك ارق جرب تمارين الاسترخاء او اشرب مشروب ساخن زي اللبن</p>
+                    </div>
+                </div>
+                
+                <!-- Exercise Advice -->
+                <div class="advice-card" data-aos="fade-up" data-aos-delay="200" onclick="toggleAdvice('exercise', event)">
+                    <div class="advice-card-header">
+                        <i class="fas fa-running"></i>
+                        <h3>الحركة دواء</h3>
+                        <i class="fas fa-chevron-down advice-toggle"></i>
+                    </div>
+                    <div class="advice-card-content" id="advice-exercise">
+                        <p>الرياضة مش بس للجسم هي للعقل كمان.. 30 دقيقه مشي يومياً بتفرز هرمونات السعادة وتقلل التوتر.</p>
+                        <p>مش لازم جيم ممكن تمشي في البيت او تعمل يوغا على اليوتيوب</p>
+                    </div>
+                </div>
+                
+                <!-- Friends Advice -->
+                <div class="advice-card" data-aos="fade-up" data-aos-delay="300" onclick="toggleAdvice('friends', event)">
+                    <div class="advice-card-header">
+                        <i class="fas fa-users"></i>
+                        <h3>صحبتك اصلك</h3>
+                        <i class="fas fa-chevron-down advice-toggle"></i>
+                    </div>
+                    <div class="advice-card-content" id="advice-friends">
+                        <p>العلاقات الإيجابية هي أهم حاجة للصحة النفسية.</p>
+                        <p>حاول تتواصل مع حد بتحبه يومياً حتي لو الرسالة صغيرة. ابعد عن الناس السلبيين الي بيسحبوا طاقتك وخليك محاط بالناس الي بيدعموك</p>
+                    </div>
+                </div>
+                
+                <!-- Digital Detox Advice -->
+                <div class="advice-card" data-aos="fade-up" data-aos-delay="400" onclick="toggleAdvice('detox', event)">
+                    <div class="advice-card-header">
+                        <i class="fas fa-mobile-alt"></i>
+                        <h3>فصل الاتصال</h3>
+                        <i class="fas fa-chevron-down advice-toggle"></i>
+                    </div>
+                    <div class="advice-card-content" id="advice-detox">
+                        <p>السوشيال ميديا ممكن تكون سامة.</p>
+                        <p>جرب "دايت رقمي" يومياً: ساعة من غير موبايل اعمل حاجة تانية.. اقرأ، ارسم، اطبخ، او بس فكر. دماغك هتشكرك</p>
+                    </div>
+                </div>
+                
+                <!-- Writing Advice -->
+                <div class="advice-card" data-aos="fade-up" data-aos-delay="500" onclick="toggleAdvice('writing', event)">
+                    <div class="advice-card-header">
+                        <i class="fas fa-pen"></i>
+                        <h3>اكتب مشاعرك</h3>
+                        <i class="fas fa-chevron-down advice-toggle"></i>
+                    </div>
+                    <div class="advice-card-content" id="advice-writing">
+                        <p>الكتابة علاج سحري.</p>
+                        <p>اكتب يومياً 3 صفحات من غير ما توقف او تفكر اكتب اي حاجه في دماغك. هتتفاجئ انك هتحس براحة كبيرة بعدها وهتفهم نفسك اكتر</p>
+                    </div>
+                </div>
+                
+                <!-- Self Compassion Advice -->
+                <div class="advice-card" data-aos="fade-up" data-aos-delay="600" onclick="toggleAdvice('compassion', event)">
+                    <div class="advice-card-header">
+                        <i class="fas fa-heart"></i>
+                        <h3>العطف على نفسك</h3>
+                        <i class="fas fa-chevron-down advice-toggle"></i>
+                    </div>
+                    <div class="advice-card-content" id="advice-compassion">
+                        <p>عامل نفسك زي ما بتعامل صحابك الكويسين.</p>
+                        <p>لوم نفسك باستمرار بيضر اكتر ما بينفع. لما تغلط قول "مش مشكلة انا بتعلم". اربط نفسك بالرحمة مش بالكمال</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Navigation Cards Section -->
     <section class="section" style="background: rgba(255,255,255,0.95);">
         <div class="container">
@@ -422,9 +524,6 @@
                 </div>
                 <div class="footer-text">
                     <p>التوعية بالصحة النفسية مسؤولية الجميع</p>
-                </div>
-                <div class="footer-supervision">
-                    <p><i class="fas fa-user-md"></i> تحت إشراف د. وفاء سامي & د. إيمان سعد</p>
                 </div>
                 <div class="footer-developer">
                     <a href="https://wa.me/201099615358" target="_blank" class="developer-link" style="direction: ltr;">

@@ -162,7 +162,7 @@ body {
 }
 
 .hero-title {
-    font-size: 4rem;
+    font-size: 2rem;
     font-weight: 900;
     margin-bottom: 1.5rem;
     line-height: 1.2;
@@ -180,16 +180,60 @@ body {
     font-weight: 500;
 }
 
-.hero-tagline {
-    font-size: 1.3rem;
-    margin-bottom: 2.5rem;
+.hero-logos {
+    margin-bottom: 1.5rem;
+}
+
+.hero-logo-img {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    border-radius: 15px;
+}
+
+.hero-team-intro {
+    background: linear-gradient(135deg, rgba(255,255,255,0.9), rgba(252,228,236,0.7));
+    padding: 1.5rem 2rem;
+    border-radius: 20px;
+    margin-bottom: 1.5rem;
+    border: 2px solid rgba(233, 30, 99, 0.15);
+}
+
+.team-text {
+    font-size: 1.1rem;
     color: #2d3748;
+    margin: 0.3rem 0;
     font-weight: 600;
-    background: linear-gradient(135deg, #4caf50, #009688);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    animation: pulse 2s ease-in-out infinite;
+}
+
+.supervisors {
+    font-size: 1rem;
+    color: #e91e63;
+    margin-top: 0.8rem;
+    font-weight: 700;
+    padding-top: 0.8rem;
+    border-top: 1px dashed rgba(233, 30, 99, 0.3);
+}
+
+.safe-space-intro {
+    background: linear-gradient(135deg, rgba(0, 188, 212, 0.1), rgba(76, 175, 80, 0.1));
+    padding: 1.5rem 2rem;
+    border-radius: 20px;
+    margin-bottom: 2rem;
+    border: 2px solid rgba(0, 188, 212, 0.2);
+}
+
+.safe-space-text {
+    font-size: 1.2rem;
+    color: #00838f;
+    font-weight: 700;
+    margin-bottom: 0.8rem;
+}
+
+.safe-space-sub {
+    font-size: 1rem;
+    color: #4a5568;
+    line-height: 1.7;
 }
 
 @keyframes pulse {
@@ -1524,6 +1568,254 @@ body {
     color: #4a5568;
     font-size: 1rem;
     margin: 0;
+}
+
+.breathing-video-demo {
+    margin-bottom: 2rem;
+    padding: 1rem;
+    background: linear-gradient(135deg, rgba(0, 188, 212, 0.05), rgba(76, 175, 80, 0.05));
+    border-radius: 15px;
+}
+
+.video-caption {
+    font-size: 1.1rem;
+    color: #00838f;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.demo-video {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
+
+/* Mood Section */
+.mood-section {
+    background: linear-gradient(135deg, rgba(255, 152, 0, 0.05), rgba(245, 124, 0, 0.05)) !important;
+}
+
+.mood-container {
+    display: flex;
+    justify-content: center;
+    padding: 2rem 0;
+}
+
+.moods-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 1.5rem;
+    max-width: 800px;
+    width: 100%;
+}
+
+.mood-btn {
+    background: white;
+    border: 2px solid #e0e0e0;
+    border-radius: 20px;
+    padding: 2rem 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.mood-btn:hover {
+    border-color: #ff9800;
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px rgba(255, 152, 0, 0.2);
+}
+
+.mood-emoji {
+    font-size: 3rem;
+}
+
+.mood-label {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #2d3748;
+}
+
+/* Mood Modal */
+.mood-modal-content {
+    max-width: 500px;
+}
+
+.mood-header {
+    background: linear-gradient(135deg, #ff9800, #f57c00);
+}
+
+.mood-body {
+    padding: 2rem;
+    text-align: center;
+}
+
+.mood-response-content {
+    margin-bottom: 2rem;
+}
+
+.mood-emoji-large {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    display: block;
+}
+
+.mood-message {
+    font-size: 1.2rem;
+    color: #2d3748;
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+}
+
+.mood-quote {
+    background: linear-gradient(135deg, rgba(255, 152, 0, 0.1), rgba(245, 124, 0, 0.1));
+    border-right: 4px solid #ff9800;
+    padding: 1.5rem;
+    border-radius: 15px;
+    font-style: italic;
+    color: #4a5568;
+    text-align: right;
+}
+
+/* Advice Heart Section */
+.advice-heart-section {
+    background: linear-gradient(135deg, rgba(233, 30, 99, 0.05), rgba(156, 39, 176, 0.05)) !important;
+}
+
+.advice-intro {
+    text-align: center;
+    font-size: 1.2rem;
+    color: #4a5568;
+    margin-bottom: 2rem;
+}
+
+.advice-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    max-width: 1000px;
+    margin: 0 auto;
+    align-items: flex-start;
+}
+
+.advice-card {
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.advice-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(233, 30, 99, 0.15);
+    border-color: rgba(233, 30, 99, 0.2);
+}
+
+.advice-card-header {
+    padding: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    background: linear-gradient(135deg, rgba(233, 30, 99, 0.1), rgba(156, 39, 176, 0.1));
+}
+
+.advice-card-header i:first-child {
+    font-size: 1.8rem;
+    color: #e91e63;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: white;
+    border-radius: 50%;
+}
+
+.advice-card-header h3 {
+    flex: 1;
+    font-size: 1.2rem;
+    color: #2d3748;
+    margin: 0;
+}
+
+.advice-toggle {
+    color: #e91e63;
+    transition: transform 0.3s ease;
+}
+
+.advice-card.active .advice-toggle {
+    transform: rotate(180deg);
+}
+
+.advice-card-content {
+    padding: 0 1.5rem;
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    background: white;
+}
+
+.advice-card.active .advice-card-content {
+    padding: 1.5rem;
+    max-height: 500px;
+}
+
+.advice-card-content p {
+    margin-bottom: 1rem;
+    color: #4a5568;
+    line-height: 1.7;
+}
+
+.advice-card-content p:last-child {
+    margin-bottom: 0;
+}
+
+.advice-video {
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    background: linear-gradient(135deg, rgba(233, 30, 99, 0.05), rgba(156, 39, 176, 0.05));
+    border-radius: 12px;
+}
+
+.advice-video .video-caption {
+    font-size: 1rem;
+    color: #e91e63;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+}
+
+/* Responsive for mood and advice */
+@media (max-width: 768px) {
+    .moods-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+    
+    .mood-btn {
+        padding: 1.5rem 0.5rem;
+    }
+    
+    .mood-emoji {
+        font-size: 2.5rem;
+    }
+    
+    .mood-label {
+        font-size: 1rem;
+    }
+    
+    .demo-video {
+        max-width: 100%;
+    }
+    
+    .advice-cards-grid {
+        grid-template-columns: 1fr;
+    }
 }
 
 /* Emotion Modal Styles */

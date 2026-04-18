@@ -158,13 +158,22 @@ function showSupportToast() {
 }
 
 function startSupportMessages() {
+    // Prevent multiple intervals from starting
+    if (window.supportMessagesStarted) return;
+    window.supportMessagesStarted = true;
+
+    // Clear any existing interval just in case
+    if (toastInterval) {
+        clearInterval(toastInterval);
+    }
+    
     // Show first message after 3 seconds
     setTimeout(showSupportToast, 3000);
     
-    // Then show random messages every minute (60000 ms)
+    // Then show random messages every 2 minutes (120000 ms)
     toastInterval = setInterval(() => {
         showSupportToast();
-    }, 60000); // Every 1 minute
+    }, 120000); 
 }
 
 // Initialize
@@ -426,7 +435,13 @@ function playVideo(sessionId) {
     const modal = document.getElementById('videoModal');
     const modalContent = modal.querySelector('.modal-content');
     
-    // Set video content with local video
+    // Use first video for stigma sessions (session3, session4), second video for others
+    const isStigmaSession = sessionId === 'session3' || sessionId === 'session4';
+    const videoSrc = isStigmaSession 
+        ? 'assets/WhatsApp Video 2026-04-18 at 10.17.27 PM.mp4' 
+        : 'assets/WhatsApp Video 2026-04-18 at 10.17.44 PM.mp4';
+    
+    // Set video content
     modalContent.innerHTML = `
         <div class="modal-header">
             <h3 class="modal-title">فيديو - ${getSessionTitle(sessionId)}</h3>
@@ -435,7 +450,7 @@ function playVideo(sessionId) {
         <div class="modal-body">
             <div class="video-container">
                 <video controls autoplay style="width: 100%; max-width: 100%; border-radius: 10px;">
-                    <source src="hero_khamsat-30996c078e7d2c8ea951fb0f827908119f08ce92c80b0bec2caea193d155fafa.mp4" type="video/mp4">
+                    <source src="${videoSrc}" type="video/mp4">
                     متصفحك لا يدعم الفيديو.
                 </video>
             </div>
@@ -964,7 +979,7 @@ function runBreathingCycle(circle, text, instruction) {
             // Exhale phase (4 seconds)
             circle.className = 'breathing-circle exhale';
             text.textContent = 'زفير...';
-            instruction.textContent = 'طلع النفس ببطء من بؤقك';
+            instruction.textContent = 'طلع النفس ببطء من انفك';
             
             setTimeout(() => {
                 // Small pause before next cycle
@@ -989,93 +1004,58 @@ function finishBreathingExercise() {
     
     circle.className = 'breathing-circle';
     text.textContent = 'أحسنت!';
-    instruction.textContent = 'تم التمرين بنجاح. كيف تشعر الآن؟';
+    instruction.textContent = 'تم التمرين بنجاح. استرح لحظة وانتقل للخطوة اللي بعدها';
     btn.disabled = false;
     btn.innerHTML = '<i class="fas fa-redo"></i> كرر التمرين';
-    
-    // Show emotion modal after 1 second
-    setTimeout(() => {
-        showEmotionModal();
-    }, 1000);
 }
 
-// Emotion and Advice Modal Functions
-const emotionAdvice = {
+// Mood Check Functions
+const moodResponses = {
     happy: {
-        emoji: '😊',
-        title: 'سعيد',
-        text: 'رائع! فرحان إنك حس بالسعادة. استمتع باللحظة وحافظ على الطاقة الإيجابية دي.',
-        quote: '"السعادة الحقيقية تكمن في الامتنان على ما لديك"'
+        emoji: '�',
+        title: 'مبسوط',
+        message: 'جميل انك مبسوط! استغل الطاقة الإيجابية دي وشاركها مع حد بتحبه. اتصل بصاحبك او اكتب 3 حاجات انت ممتن لهم النهارده. الطاقة الإيجابية معدية!',
+        quote: '"السعادة تتضاعف لما نشاركها مع الآخرين"'
     },
-    sad: {
-        emoji: '😢',
-        title: 'حزين',
-        text: 'مشاعرك مهمة والحزن جزء طبيعي من الحياة. خد وقتك، ابكي لو محتاج، ومتنساش إن ده هيمشي.',
-        quote: '"بعد كل ليلة ليل، صبح لازم يجي. أنت أقوى منك تتخيل"'
+    active: {
+        emoji: '🤩',
+        title: 'نشيط',
+        message: 'طاقتك عالية؟! استغلها في حاجة انت مؤجلها من زمان! اعمل رياضة... نظم اوضتك.. او اتعلم حاجه جديدة. الطاقة دي هدية استخدمها كويس.',
+        quote: '"الطاقة الإيجابية هدية - استخدمها فيما ينفعك"'
+    },
+    annoyed: {
+        emoji: '�',
+        title: 'متضايق',
+        message: 'متضايق؟! ده طبيعي كلنا بنعدي بكده. اسمح لنفسك ترتاح. نام كويس النهاردة ومتزودش علي نفسك بكره يوم جديد وفرصة جديدة.',
+        quote: '"بعد كل ليلة ليل، صبح لازم يجي"'
     },
     anxious: {
-        emoji: '😰',
+        emoji: '�',
         title: 'قلقان',
-        text: 'القلق طبيعي. جرب تكرر التمرين كمان مرة، وافكر في الحاجة الحلوة اللي حصلتلك النهاردة.',
-        quote: '"القلق مش هيموتك، وهو مش هيستمر للأبد. خد نفس عميق وأنت كدا كدا كويس"'
-    },
-    tired: {
-        emoji: '😴',
-        title: 'متعب',
-        text: 'التعب بيحتاج راحة. متضغطش على نفسك، خد قيلولة أو نام بدري النهاردة. جسمك بيستحق.',
-        quote: '"الراحة مش كسل، هي استعادة للطاقة عشان تكمل بقوة"'
-    },
-    stressed: {
-        emoji: '😫',
-        title: 'مضغوط',
-        text: 'الضغط صعب بجد. جرب تكتب اللي مضايقك على ورقة، أو اتكلم مع حد تثق فيه. مش لازم تشيل كل حاجة لوحدك.',
-        quote: '"التقسيم بيسهل المهمة. كل خطوة صغيرة بتقربك من الهدف"'
+        message: 'فاهم القلق صعب. جرب تمرين التنفس الي فوق دلوقتي وفكر: اي اسوء حاجة ممكن تحصل؟ هل هي حقيقية ولا مجرد تفكير سلبي؟ اتكلم مع حد بتثق فيه دا هيفيدك جدا.',
+        quote: '"القلق مش هيموتك، وهو مش هيستمر للأبد"'
     },
     calm: {
-        emoji: '🧘',
+        emoji: '😊',
         title: 'هادي',
-        text: 'الهدوء نعمة! استمتع بالسكينة دي وحاول تحفظها. التمرين نجح في تهديتك.',
+        message: 'الهدوء ده نعمة. ده وقت ممتاز عشان تفكر في اهدافك او تقرا كتاب. حافظ علي الحاله دي بتناول خفيف أو مشي في مكان هادي.',
         quote: '"السلام الداخلي أغلى من أي شيء تاني في الدنيا"'
     }
 };
 
-function showEmotionModal() {
-    const modal = document.getElementById('emotionModal');
-    modal.style.display = 'flex';
-    document.body.style.overflow = 'hidden';
-    openModalWithAnimation(modal);
-}
-
-function closeEmotionModal() {
-    const modal = document.getElementById('emotionModal');
-    closeModalWithAnimation(modal);
-    setTimeout(() => {
-        modal.style.display = 'none';
-        document.body.style.overflow = 'auto';
-    }, 300);
-}
-
-function selectEmotion(emotion) {
-    closeEmotionModal();
+function selectMood(mood) {
+    const modal = document.getElementById('moodModal');
+    const title = document.getElementById('moodTitle');
+    const content = document.getElementById('moodContent');
+    const response = moodResponses[mood];
     
-    setTimeout(() => {
-        showAdviceModal(emotion);
-    }, 300);
-}
-
-function showAdviceModal(emotion) {
-    const modal = document.getElementById('adviceModal');
-    const title = document.getElementById('adviceTitle');
-    const content = document.getElementById('adviceContent');
-    const advice = emotionAdvice[emotion];
+    if (!response) return;
     
-    if (!advice) return;
-    
-    title.textContent = `نصيحة للحالة: ${advice.title}`;
+    title.textContent = response.title;
     content.innerHTML = `
-        <span class="advice-emoji">${advice.emoji}</span>
-        <p class="advice-text">${advice.text}</p>
-        <div class="advice-quote">${advice.quote}</div>
+        <span class="mood-emoji-large">${response.emoji}</span>
+        <p class="mood-message">${response.message}</p>
+        <div class="mood-quote">${response.quote}</div>
     `;
     
     modal.style.display = 'flex';
@@ -1083,8 +1063,8 @@ function showAdviceModal(emotion) {
     openModalWithAnimation(modal);
 }
 
-function closeAdviceModal() {
-    const modal = document.getElementById('adviceModal');
+function closeMoodModal() {
+    const modal = document.getElementById('moodModal');
     closeModalWithAnimation(modal);
     setTimeout(() => {
         modal.style.display = 'none';
@@ -1092,15 +1072,46 @@ function closeAdviceModal() {
     }, 300);
 }
 
-// Modal close on outside click for new modals
-window.addEventListener('click', function(event) {
-    const emotionModal = document.getElementById('emotionModal');
-    const adviceModal = document.getElementById('adviceModal');
-    
-    if (event.target === emotionModal) {
-        closeEmotionModal();
+// Advice Cards Toggle Function
+function toggleAdvice(adviceId, event) {
+    // Stop event from bubbling up
+    if (event) {
+        event.stopPropagation();
     }
-    if (event.target === adviceModal) {
-        closeAdviceModal();
+    
+    const clickedContent = document.getElementById('advice-' + adviceId);
+    if (!clickedContent) return;
+    
+    const clickedCard = clickedContent.closest('.advice-card');
+    if (!clickedCard) return;
+    
+    const isAlreadyActive = clickedCard.classList.contains('active');
+    
+    // Close ALL cards first
+    document.querySelectorAll('.advice-card').forEach(function(card) {
+        card.classList.remove('active');
+    });
+    
+    // If the clicked card wasn't active, open it
+    if (!isAlreadyActive) {
+        clickedCard.classList.add('active');
+    }
+}
+
+// Close cards when clicking outside
+document.addEventListener('click', function(e) {
+    if (!e.target.closest('.advice-card')) {
+        document.querySelectorAll('.advice-card').forEach(function(card) {
+            card.classList.remove('active');
+        });
+    }
+});
+
+// Modal close on outside click for mood modal
+window.addEventListener('click', function(event) {
+    const moodModal = document.getElementById('moodModal');
+    
+    if (event.target === moodModal) {
+        closeMoodModal();
     }
 });
