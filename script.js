@@ -329,7 +329,7 @@ function renderQuiz() {
 
     html += `
         <button class="btn btn-quiz-submit" onclick="submitQuiz()">
-            <i class="fas fa-check"></i> submit answers
+            <i class="fas fa-check"></i> إرسال الإجابات
         </button>
     `;
 
@@ -352,7 +352,7 @@ function selectQuizOption(questionIndex, optionIndex) {
 
 function submitQuiz() {
     if (!currentQuiz || Object.keys(quizAnswers).length !== currentQuiz.questions.length) {
-        showNotification('please answer all questions', 'warning');
+        showNotification('من فضلك جاوب على كل الأسئلة', 'warning');
         return;
     }
 
@@ -391,25 +391,25 @@ function showQuizResults(score, totalQuestions) {
     let message = '';
 
     if (percentage >= 80) {
-        message = 'excellent! you have a great understanding!';
+        message = 'ممتاز! فهمك كويس جداً للموضوع 👏';
     } else if (percentage >= 60) {
-        message = 'good job! you understand the basics well.';
+        message = 'شطور! فهمت الأساسيات كويس 👍';
     } else if (percentage >= 40) {
-        message = 'not bad! consider reviewing the material again.';
+        message = 'مش وحش! بس راجع المحتوى تاني عشان تفهم أكتر 📚';
     } else {
-        message = 'keep learning! review the sessions and try again.';
+        message = 'كمل تعلم! راجع السيشنات وحاول تاني 💪';
     }
 
     const resultsHtml = `
         <div class="quiz-result">
-            <h4>your results</h4>
+            <h4>نتيجتك</h4>
             <div class="quiz-score">${score}/${totalQuestions}</div>
             <div class="quiz-message">${message}</div>
             <button class="btn btn-primary" onclick="closeQuiz()">
-                <i class="fas fa-times"></i> close
+                <i class="fas fa-times"></i> إغلاق
             </button>
             <button class="btn btn-secondary" onclick="retakeQuiz()">
-                <i class="fas fa-redo"></i> retake quiz
+                <i class="fas fa-redo"></i> أعد الاختبار
             </button>
         </div>
     `;
