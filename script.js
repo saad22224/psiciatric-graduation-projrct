@@ -967,7 +967,7 @@ function runBreathingCycle(circle, text, instruction) {
     // Inhale phase (4 seconds)
     circle.className = 'breathing-circle inhale';
     text.textContent = 'شهيق...';
-    instruction.textContent = `خد نفس عميق من خشمك (الدورة ${breathingCycle} من ${totalCycles})`;
+    instruction.textContent = `خد نفس عميق من انفك (الدورة ${breathingCycle} من ${totalCycles})`;
     
     setTimeout(() => {
         // Hold phase (2 seconds)
