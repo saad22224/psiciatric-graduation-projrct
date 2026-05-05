@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>أساطير شائعة | واعي</title>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <style>
+        .myth-badge {
+            display: inline-block;
+            padding: 5px 15px;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            background: rgba(233, 30, 99, 0.1);
+            color: #e91e63;
+        }
+        .myth-box {
+            background: #fff0f3;
+            border-right: 5px solid #e91e63;
+            padding: 20px;
+            border-radius: 12px;
+            margin: 20px 0;
+        }
+        .fact-box {
+            background: #f0fff4;
+            border-right: 5px solid #4caf50;
+            padding: 20px;
+            border-radius: 12px;
+            margin: 20px 0;
+        }
+        .session-intro {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        .quiz-section {
+            margin-top: 80px;
+            background: linear-gradient(135deg, #fff5f7, #f3e5f5);
+            padding: 60px 0;
+            border-radius: 30px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <img src="شعار_وعي_للأهتمام_بالصحة_النفسية-removebg-preview.webp" alt="وعي - للاهتمام بالصحة النفسية" class="nav-logo-img">
+            </a>
+            <ul class="nav-menu">
+                <li><a href="index.html">الرئيسية</a></li>
+                <li><a href="mental-health.html">الصحة النفسية</a></li>
+                <li><a href="myths.html" class="active">أساطير شائعة</a></li>
+                <li><a href="stigma.html">الوصمة النفسية</a></li>
+                <li><a href="social-distance.html">المسافة الاجتماعية</a></li>
+                <li><a href="attitudes.html">الاتجاهات</a></li>
+                <li><a href="support-center.html">مركز الدعم</a></li>
+            </ul>
+            <div class="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header Section -->
+    <section class="section" style="padding-top: 120px; padding-bottom: 40px;">
+        <div class="container">
+            <div class="session-intro" data-aos="fade-down">
+                <h2 class="section-title">أساطير شائعة حول الصحة النفسية</h2>
+                <p class="section-subtitle">حقائق ومفاهيم محتاجين نصححها مع بعض</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" style="padding-top: 0;">
+        <div class="container">
+            
+            <!-- Session 1 -->
+            <div class="session-card" data-aos="fade-up">
+                <div class="session-header">
+                    <span class="myth-badge">Session 1</span>
+                    <h3>ليه عندنا أصلًا أفكار غلط؟</h3>
+                    <div class="session-icon"><i class="fas fa-question-circle"></i></div>
+                </div>
+                <div class="session-content">
+                    <div class="conversation">
+                        <div class="message user"><p>ليه لما حد يقول "أنا بتعالج نفسيًا" بعض الناس تتوتر؟ وليه كلمة "دكتور نفسي" بتخوف؟</p></div>
+                        <div class="message expert">
+                            <p>الحقيقة إن الموضوع مش في المرض نفسه، لكن في "الأفكار القديمة" اللي اتزرعت في المجتمع.</p>
+                            <p>من وإحنا صغيرين بنسمع جمل، نشوف أفلام، ونكرر كلام غلط لدرجة إنه بقى حقيقة في دماغنا.</p>
+                        </div>
+                        <div class="message expert highlight">
+                            <p>💡 ده اللي بنسميه "أساطير الصحة النفسية" (Mental Health Myths). هي مش أكاذيب مقصودة، لكن مفاهيم غلط اتصدقت بالتكرار.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Session 2 -->
+            <div class="session-card" data-aos="fade-up">
+                <div class="session-header">
+                    <span class="myth-badge">Session 2</span>
+                    <h3>الأسطورة: "المرض النفسي يعني جنون"</h3>
+                    <div class="session-icon"><i class="fas fa-ghost"></i></div>
+                </div>
+                <div class="session-content">
+                    <div class="myth-box">
+                        <p><strong>الأسطورة:</strong> أي حد عنده اكتئاب أو قلق يبقى "غير طبيعي" أو "فاقد العقل".</p>
+                    </div>
+                    <div class="conversation">
+                        <div class="message expert">
+                            <p>الإجابة القاطعة: لا. المرض النفسي علميًا هو اضطراب في التفكير أو المشاعر أو السلوك، مش فقدان عقل ولا انفصال عن الواقع.</p>
+                        </div>
+                    </div>
+                    <div class="fact-box">
+                        <p><strong>الحقيقة:</strong> أغلب الأشخاص اللي بيعانوا نفسيًا بيعيشوا حياة طبيعية، بيشتغلوا ويدرسوا، لكن معاناتهم بتكون داخلية مش ظاهرة.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Session 3 -->
+            <div class="session-card" data-aos="fade-up">
+                <div class="session-header">
+                    <span class="myth-badge">Session 3</span>
+                    <h3>الأسطورة: "المريض النفسي خطر على الآخرين"</h3>
+                    <div class="session-icon"><i class="fas fa-exclamation-triangle"></i></div>
+                </div>
+                <div class="session-content">
+                    <div class="myth-box">
+                        <p><strong>الأسطورة:</strong> المرضى النفسيين عنيفين ولازم نخاف منهم.</p>
+                    </div>
+                    <div class="conversation">
+                        <div class="message expert">
+                            <p>لو كل شخص قلقان كان خطر، كنا هنخاف من نص الكوكب! الواقع إن معظمهم مش عنيفين، بالعكس، أحيانًا بيكونوا حساسين جداً.</p>
+                        </div>
+                    </div>
+                    <div class="fact-box">
+                        <p><strong>الحقيقة:</strong> الخوف ده بيجي من أفلام السينما اللي بتبالغ، وده بيخلي المجتمع يبعد عنهم ويخليهم يعانوا في عزلة.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Session 4 -->
+            <div class="session-card" data-aos="fade-up">
+                <div class="session-header">
+                    <span class="myth-badge">Session 4</span>
+                    <h3>الأسطورة: "المرض النفسي ضعف شخصية"</h3>
+                    <div class="session-icon"><i class="fas fa-user-shield"></i></div>
+                </div>
+                <div class="session-content">
+                    <div class="myth-box">
+                        <p><strong>الأسطورة:</strong> لو إنت قوي كفاية مش هيجيلك اكتئاب.</p>
+                    </div>
+                    <div class="conversation">
+                        <div class="message user"><p>دي أكتر جملة بتوجع.. هل فعلاً المرض ضعف؟</p></div>
+                        <div class="message expert">
+                            <p>أبداً. المرض النفسي نتيجة تفاعل بين ضغوط الحياة، كيمياء المخ، وتجارب سابقة. ملوش علاقة بالقوة أو الضعف.</p>
+                        </div>
+                    </div>
+                    <div class="fact-box">
+                        <p><strong>الحقيقة:</strong> لوم الشخص لنفسه بيخليه يحس بالذنب ويخبي مشاعره بدل ما يطلب مساعدة، وده بيزود التعب.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Session 5 -->
+            <div class="session-card" data-aos="fade-up">
+                <div class="session-header">
+                    <span class="myth-badge">Session 5</span>
+                    <h3>الأسطورة: "لازم أكون سعيد طول الوقت"</h3>
+                    <div class="session-icon"><i class="fas fa-smile"></i></div>
+                </div>
+                <div class="session-content">
+                    <div class="myth-box">
+                        <p><strong>الأسطورة:</strong> لو مش سعيد يبقى عندي مشكلة نفسية ولازم أتعالج.</p>
+                    </div>
+                    <div class="conversation">
+                        <div class="message expert">
+                            <p>الإنسان الطبيعي بيمر بحزن، قلق، فرح، وإحباط. دي مشاعر بشرية طبيعية جداً.</p>
+                        </div>
+                    </div>
+                    <div class="fact-box">
+                        <p><strong>الحقيقة:</strong> الصحة النفسية مش "سعادة دائمة"، لكنها "قدرة على التوازن وسط التقلبات". رفض المشاعر السلبية هو اللي بيعمل ضغط غير واقعي.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Session 6 -->
+            <div class="session-card" data-aos="fade-up">
+                <div class="session-header">
+                    <span class="myth-badge">Session 6</span>
+                    <h3>الأسطورة: "المرض النفسي مش بيتحسن"</h3>
+                    <div class="session-icon"><i class="fas fa-chart-line"></i></div>
+                </div>
+                <div class="session-content">
+                    <div class="myth-box">
+                        <p><strong>الأسطورة:</strong> اللي بيتعب نفسياً بيفضل طول عمره تعبان ملوش حل.</p>
+                    </div>
+                    <div class="conversation">
+                        <div class="message expert">
+                            <p>العلم بيقول إن معظم الاضطرابات قابلة للعلاج أو التحسن الكبير أو التعايش الصحي.</p>
+                        </div>
+                    </div>
+                    <div class="fact-box">
+                        <p><strong>الحقيقة:</strong> زي أي مرض مزمن، ممكن الشخص يعيش حياة طبيعية جداً مع العلاج. المشكلة الحقيقية في التأخير في طلب المساعدة.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Session 7 -->
+            <div class="session-card" data-aos="fade-up">
+                <div class="session-header">
+                    <span class="myth-badge">Session 7</span>
+                    <h3>الأسطورة: "العلاج النفسي ملوش لازمة"</h3>
+                    <div class="session-icon"><i class="fas fa-comment-slash"></i></div>
+                </div>
+                <div class="session-content">
+                    <div class="myth-box">
+                        <p><strong>الأسطورة:</strong> الكلام مع دكتور نفسي مش بيفيد، مجرد فضفضة.</p>
+                    </div>
+                    <div class="conversation">
+                        <div class="message expert">
+                            <p>العلاج النفسي مش كلام عادي، هو علم وأساليب منظمة لإعادة تنظيم التفكير وفهم السلوك البشري.</p>
+                        </div>
+                    </div>
+                    <div class="fact-box">
+                        <p><strong>الحقيقة:</strong> هو مش سريع زي المسكنات، لكن تأثيره عميق وطويل المدى وبيساعدك تفهم نفسك وتغير نمط حياتك.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Session 8 -->
+            <div class="session-card" data-aos="fade-up">
+                <div class="session-header">
+                    <span class="myth-badge">Session 8</span>
+                    <h3>الأسطورة: "الأدوية النفسية خطر وإدمان"</h3>
+                    <div class="session-icon"><i class="fas fa-pills"></i></div>
+                </div>
+                <div class="session-content">
+                    <div class="myth-box">
+                        <p><strong>الأسطورة:</strong> لو أخدت دواء نفسي مش هعرف أبطله وهبقى مدمن.</p>
+                    </div>
+                    <div class="conversation">
+                        <div class="message expert">
+                            <p>مش كل الأدوية بتسبب إدمان. فيه أدوية بتنظم كيمياء المخ وبتساعد على الاستقرار تحت إشراف طبي دقيق.</p>
+                        </div>
+                    </div>
+                    <div class="fact-box">
+                        <p><strong>الحقيقة:</strong> الخوف من الدواء بيخلي الناس ترفض العلاج وحالتها تتدهور. المهم يكون العلاج تحت إشراف متخصص.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Session 9 -->
+            <div class="session-card" data-aos="fade-up">
+                <div class="session-header">
+                    <span class="myth-badge">Session 9</span>
+                    <h3>الأسطورة: "تجاهل المشكلة بيحلها"</h3>
+                    <div class="session-icon"><i class="fas fa-eye-slash"></i></div>
+                </div>
+                <div class="session-content">
+                    <div class="myth-box">
+                        <p><strong>الأسطورة:</strong> لو عملت نفسي مش واخد بالي من الزعل، هيروح لوحده.</p>
+                    </div>
+                    <div class="conversation">
+                        <div class="message expert">
+                            <p>تجاهل المشاعر بيزود الضغط الداخلي وبيخلي المشكلة تكبر وتظهر في شكل أعراض أقوى لاحقاً.</p>
+                        </div>
+                    </div>
+                    <div class="fact-box">
+                        <p><strong>الحقيقة:</strong> المشاعر محتاجة فهم وتعبير ومعالجة، مش إنكار وتجاهل. المواجهة هي أول طريق الحل.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Support Sessions Section -->
+            <div class="session-intro" style="margin-top: 100px;" data-aos="fade-up">
+                <h2 class="section-title">إزاي تكون داعم حقيقي؟</h2>
+                <p class="section-subtitle">الدعم النفسي فن محتاجين نتعلمه</p>
+            </div>
+
+            <!-- Support Session 1 -->
+            <div class="session-card" data-aos="fade-up">
+                <div class="session-header">
+                    <span class="myth-badge">الدعم النفسي 1</span>
+                    <h3>يعني إيه أكون داعم فعليًا؟</h3>
+                    <div class="session-icon"><i class="fas fa-hands-helping"></i></div>
+                </div>
+                <div class="session-content">
+                    <div class="conversation">
+                        <div class="message user"><p>صاحبي قالي: "أنا مش كويس ومش قادر".. أعمل إيه؟</p></div>
+                        <div class="message expert">
+                            <p>أول رد فعل طبيعي هو التوتر أو محاولة تغيير الموضوع.. لكن الدعم الحقيقي مش إنك "تصلح المشكلة".</p>
+                        </div>
+                        <div class="message expert highlight">
+                            <p>💡 الدعم هو إنك تسمع بدون حكم، ما تقللش من إحساسه، وتديله مساحة يتكلم. أحيانًا الشخص مش محتاج حل، محتاج يحس إنه مش لوحده.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Support Session 2 -->
+            <div class="session-card" data-aos="fade-up">
+                <div class="session-header">
+                    <span class="myth-badge">الدعم النفسي 2</span>
+                    <h3>أقول إيه وما أقولش؟</h3>
+                    <div class="session-icon"><i class="fas fa-comment-dots"></i></div>
+                </div>
+                <div class="session-content">
+                    <div class="conversation">
+                        <div class="message user"><p>بلاش تقول:</p></div>
+                        <div class="message myth"><p>❌ "كبر دماغك"، "إنت بتبالغ"، "غيرك أسوأ منك"، "خلاص متفكرش".</p></div>
+                        <div class="message user"><p>قول جمل داعمة زي:</p></div>
+                        <div class="message expert"><p>✔️ "أنا سامعك"، "إنت مش لوحدك"، "أنا معاك"، "تحب تحكي أكتر؟".</p></div>
+                        <div class="message expert highlight">
+                            <p>💡 الفرق الحقيقي مش في الكلمات، لكن في الإحساس اللي بيوصل.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Support Session 3 -->
+            <div class="session-card" data-aos="fade-up">
+                <div class="session-header">
+                    <span class="myth-badge">الدعم النفسي 3</span>
+                    <h3>حدودك كإنسان داعم</h3>
+                    <div class="session-icon"><i class="fas fa-user-lock"></i></div>
+                </div>
+                <div class="session-content">
+                    <div class="conversation">
+                        <div class="message expert">
+                            <p>مهم تفهم إنك مش مسؤول تحل حياة حد. دورك تكون موجود، تسمع، وتشجع على طلب مساعدة متخصصة.</p>
+                        </div>
+                        <div class="message expert warning">
+                            <p>⚠️ الحدود مهمة لأن كل شخص له طاقة، وفيه حالات لازم متخصص يتدخل فيها.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Conclusion -->
+            <div class="session-card" style="background: linear-gradient(135deg, #e91e63, #9c27b0); color: white;" data-aos="zoom-in">
+                <div class="session-content" style="text-align: center; padding: 40px;">
+                    <h2>الخلاصة ❤️</h2>
+                    <p style="font-size: 1.2rem; margin: 20px 0;">كل الأساطير دي بتجمعها حاجة واحدة: الخوف من الفهم. لكن لما نفهم، الخوف بيقل، والوعي بيزيد، والتعافي بيبدأ.</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Quiz Section -->
+    <section class="quiz-section">
+        <div class="container">
+            <div class="section-header" data-aos="fade-down">
+                <h2 class="section-title">اختبر وعيك بالأساطير</h2>
+                <p class="section-subtitle">بعد ما خلصنا السيشنات، تفتكر تقدر تفرق بين الحقيقة والأسطورة؟</p>
+            </div>
+            
+            <div style="text-align: center; margin-top: 30px;">
+                <button class="btn btn-quiz" style="padding: 20px 50px; font-size: 1.2rem;" onclick="startMythQuiz()">
+                    <i class="fas fa-graduation-cap"></i> ابدأ الاختبار الشامل
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quiz Modal -->
+    <div id="quizModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="quizTitle">اختبار الأساطير والحقائق</h3>
+                <button class="close-modal" onclick="closeQuiz()">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div id="quizContent"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="شعار_وعي_للأهتمام_بالصحة_النفسية-removebg-preview.webp" alt="وعي" class="footer-logo-img">
+                </div>
+                <div class="footer-text">
+                    <p>التوعية بالصحة النفسية مسؤولية الجميع</p>
+                </div>
+                <div class="footer-developer">
+                    <a href="https://wa.me/201099615358" target="_blank" class="developer-link" style="direction: ltr;">
+                        <span>Developed with</span>
+                        <i class="fas fa-heart"></i>
+                        <span>by Eng. Saad Harera</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 1000,
+            once: true,
+            offset: 100
+        });
+
+        // Myth Quiz Logic
+        function startMythQuiz() {
+            const quizData = {
+                title: "اختبار الأساطير والحقائق",
+                questions: [
+                    { question: "المرض النفسي يعني دائمًا فقدان العقل أو الجنون.", options: ["صح", "خطأ"], correct: 1 },
+                    { question: "أغلب الأشخاص الذين يعانون من اضطرابات نفسية خطرون على الآخرين.", options: ["صح", "خطأ"], correct: 1 },
+                    { question: "المرض النفسي لا علاقة له بضعف الشخصية.", options: ["صح", "خطأ"], correct: 0 },
+                    { question: "المشاعر السلبية مثل الحزن والقلق غير طبيعية ويجب التخلص منها تمامًا.", options: ["صح", "خطأ"], correct: 1 },
+                    { question: "العلاج النفسي يعتمد على أساليب علمية مدروسة.", options: ["صح", "خطأ"], correct: 0 },
+                    { question: "الشخص الذي يعاني نفسيًا لا يمكن أن يتحسن أبدًا.", options: ["صح", "خطأ"], correct: 1 },
+                    { question: "تجاهل المشكلات النفسية يساعد على حلها تلقائيًا.", options: ["صح", "خطأ"], correct: 1 },
+                    { question: "الأدوية النفسية تسبب دائمًا إدمان.", options: ["صح", "خطأ"], correct: 1 },
+                    { question: "الصحة النفسية تعني السعادة المستمرة فقط.", options: ["صح", "خطأ"], correct: 1 },
+                    { question: "طلب المساعدة النفسية يدل على وعي وشجاعة.", options: ["صح", "خطأ"], correct: 0 },
+                    {
+                        question: "المقصود بالأساطير النفسية هو:",
+                        options: ["حقائق علمية", "معلومات طبية دقيقة", "أفكار خاطئة منتشرة في المجتمع", "تشخيص طبي"],
+                        correct: 2
+                    },
+                    {
+                        question: "المرض النفسي يعني:",
+                        options: ["ضعف شخصية", "فقدان عقل دائم", "اضطراب في التفكير أو المشاعر أو السلوك", "مرض جسدي فقط"],
+                        correct: 2
+                    },
+                    {
+                        question: "السبب الرئيسي لانتشار الأساطير النفسية هو:",
+                        options: ["العلم", "التوعية", "الإعلام والأفلام والمفاهيم القديمة", "العلاج النفسي"],
+                        correct: 2
+                    },
+                    {
+                        question: "العلاج النفسي يعتمد على:",
+                        options: ["نصائح عشوائية", "أساليب علمية منظمة", "تخمينات", "تجاهل المشكلة"],
+                        correct: 1
+                    },
+                    {
+                        question: "تجاهل المشكلة النفسية يؤدي إلى:",
+                        options: ["اختفائها", "تحسن سريع", "زيادة المشكلة", "شفاء فوري"],
+                        correct: 2
+                    }
+                ]
+            };
+            
+            renderCustomQuiz(quizData);
+            document.getElementById('quizModal').style.display = 'block';
+            document.body.style.overflow = 'hidden';
+        }
+
+        function renderCustomQuiz(data) {
+            const container = document.getElementById('quizContent');
+            let html = '';
+            
+            data.questions.forEach((q, i) => {
+                html += `<div class="quiz-question" style="margin-bottom: 30px; padding: 20px; background: #fff; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.05);">`;
+                html += `<h4 style="margin-bottom: 15px; color: #e91e63;">${i+1}. ${q.question}</h4>`;
+                html += `<div class="quiz-options" style="display: grid; gap: 10px;">`;
+                
+                if(q.type === 'boolean') {
+                    html += `
+                        <div class="quiz-option" onclick="selectCustomOption(${i}, 1)">صح</div>
+                        <div class="quiz-option" onclick="selectCustomOption(${i}, 0)">خطأ</div>
+                    `;
+                } else {
+                    q.options.forEach((opt, oi) => {
+                        html += `<div class="quiz-option" onclick="selectCustomOption(${i}, ${oi})">${opt}</div>`;
+                    });
+                }
+                
+                html += `</div></div>`;
+            });
+            
+            html += `<button class="btn btn-quiz-submit" style="width: 100%; padding: 15px;" onclick="submitCustomQuiz()">إرسال الإجابات</button>`;
+            container.innerHTML = html;
+            window.customQuizData = data;
+            window.customAnswers = {};
+        }
+
+        function selectCustomOption(qi, oi) {
+            const options = document.querySelectorAll(`.quiz-question:nth-child(${qi+1}) .quiz-option`);
+            options.forEach(opt => opt.classList.remove('selected'));
+            options[qqi(qi, oi)].classList.add('selected');
+            window.customAnswers[qi] = oi;
+        }
+        
+        function qqi(qi, oi) {
+            // Helper to get index correctly for boolean
+            if(window.customQuizData.questions[qi].type === 'boolean') {
+                return oi === 1 ? 0 : 1;
+            }
+            return oi;
+        }
+
+        function submitCustomQuiz() {
+            const data = window.customQuizData;
+            const answers = window.customAnswers;
+            if (Object.keys(answers).length < data.questions.length) {
+                alert('من فضلك جاوب على كل الأسئلة');
+                return;
+            }
+            
+            let score = 0;
+            data.questions.forEach((q, i) => {
+                const isCorrect = (q.type === 'boolean') ? (answers[i] === (q.correct ? 1 : 0)) : (answers[i] === q.correct);
+                if(isCorrect) score++;
+                
+                const options = document.querySelectorAll(`.quiz-question:nth-child(${i+1}) .quiz-option`);
+                options.forEach((opt, oi) => {
+                    const optionVal = (q.type === 'boolean') ? (oi === 0 ? 1 : 0) : oi;
+                    const correctVal = (q.type === 'boolean') ? (q.correct ? 1 : 0) : q.correct;
+                    
+                    if(optionVal === correctVal) opt.classList.add('correct');
+                    else if(optionVal === answers[i]) opt.classList.add('incorrect');
+                });
+            });
+            
+            const resultHtml = `
+                <div class="quiz-result" style="text-align: center; padding: 30px;">
+                    <div style="font-size: 3rem; margin-bottom: 10px;">${score}/${data.questions.length}</div>
+                    <h3>${score > data.questions.length/2 ? 'عاش يا بطل! 👏' : 'محتاج تراجع السيشنات تاني 💪'}</h3>
+                    <p>فهمك للأساطير بيساعدك وببيساعد المجتمع كله.</p>
+                    <button class="btn btn-primary" onclick="closeQuiz()" style="margin-top: 20px;">إغلاق</button>
+                </div>
+            `;
+            setTimeout(() => {
+                document.getElementById('quizContent').innerHTML = resultHtml;
+            }, 1000);
+        }
+    </script>
+</body>
+</html>

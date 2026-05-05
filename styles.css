@@ -79,7 +79,7 @@ body {
 .nav-menu {
     display: flex;
     list-style: none;
-    gap: 2rem;
+    gap: 1.2rem;
 }
 
 .nav-menu a {
@@ -88,8 +88,9 @@ body {
     font-weight: 600;
     transition: all 0.3s ease;
     position: relative;
-    padding: 8px 16px;
+    padding: 6px 12px;
     border-radius: 25px;
+    font-size: 0.95rem;
 }
 
 .nav-menu a:hover {
@@ -907,7 +908,7 @@ body {
 }
 
 /* Responsive Design */
-@media (max-width: 768px) {
+@media (max-width: 1150px) {
     .nav-menu {
         display: none;
         position: absolute;
