@@ -139,7 +139,7 @@ function showSupportToast() {
         text: message,
         duration: 5000,
         gravity: "top",
-        position: "left", 
+        position: "left",
         style: {
             background: "linear-gradient(135deg, #e91e63, #9c27b0)",
             borderRadius: "12px",
@@ -158,11 +158,11 @@ function startSupportMessages() {
     window.supportMessagesStarted = true;
     if (toastInterval) clearInterval(toastInterval);
     setTimeout(showSupportToast, 3000);
-    toastInterval = setInterval(showSupportToast, 120000); 
+    toastInterval = setInterval(showSupportToast, 120000);
 }
 
 // Initialize
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     initializeNavigation();
     initializeScrollEffects();
     initializeAnimations();
@@ -173,13 +173,13 @@ document.addEventListener('DOMContentLoaded', function() {
 // Navigation
 function initializeNavigation() {
     if (navToggle) {
-        navToggle.addEventListener('click', function() {
+        navToggle.addEventListener('click', function () {
             navMenu.classList.toggle('active');
         });
     }
 
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
+        anchor.addEventListener('click', function (e) {
             e.preventDefault();
             const target = document.querySelector(this.getAttribute('href'));
             if (target) {
@@ -200,7 +200,7 @@ function initializeScrollEffects() {
         rootMargin: '0px 0px -50px 0px'
     };
 
-    const observer = new IntersectionObserver(function(entries) {
+    const observer = new IntersectionObserver(function (entries) {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.style.opacity = '1';
@@ -230,7 +230,7 @@ function initializeAOS() {
 // Regular Animations
 function initializeAnimations() {
     document.querySelectorAll('.btn, .quiz-option').forEach(element => {
-        element.addEventListener('click', function(e) {
+        element.addEventListener('click', function (e) {
             const ripple = document.createElement('span');
             ripple.classList.add('ripple');
             this.appendChild(ripple);
@@ -360,10 +360,10 @@ function playVideo(sessionId) {
     if (!modal) return;
     const modalContent = modal.querySelector('.modal-content');
     const isStigmaSession = sessionId.startsWith('stigma') || sessionId === 'session5';
-    const videoSrc = isStigmaSession 
-        ? 'assets/WhatsApp Video 2026-04-18 at 10.17.27 PM.mp4' 
+    const videoSrc = isStigmaSession
+        ? 'assets/WhatsApp Video 2026-04-18 at 10.17.27 PM.mp4'
         : 'assets/WhatsApp Video 2026-04-18 at 10.17.44 PM.mp4';
-    
+
     modalContent.innerHTML = `
         <div class="modal-header">
             <h3 class="modal-title">فيديو - ${getSessionTitle(sessionId)}</h3>
@@ -836,7 +836,7 @@ function toggleAdvice(adviceId, event) {
     const clickedCard = clickedContent.closest('.advice-card');
     if (!clickedCard) return;
     const isAlreadyActive = clickedCard.classList.contains('active');
-    document.querySelectorAll('.advice-card').forEach(function(card) {
+    document.querySelectorAll('.advice-card').forEach(function (card) {
         card.classList.remove('active');
     });
     if (!isAlreadyActive) clickedCard.classList.add('active');
@@ -844,7 +844,7 @@ function toggleAdvice(adviceId, event) {
 
 function toggleIntroCard(element) {
     const isAlreadyActive = element.classList.contains('active');
-    document.querySelectorAll('.intro-card').forEach(function(card) {
+    document.querySelectorAll('.intro-card').forEach(function (card) {
         card.classList.remove('active');
     });
     if (!isAlreadyActive) element.classList.add('active');
@@ -852,7 +852,7 @@ function toggleIntroCard(element) {
 
 function toggleDisorderCard(element) {
     const isAlreadyActive = element.classList.contains('active');
-    document.querySelectorAll('.disorder-card').forEach(function(card) {
+    document.querySelectorAll('.disorder-card').forEach(function (card) {
         card.classList.remove('active');
     });
     if (!isAlreadyActive) {
@@ -865,25 +865,25 @@ function toggleDisorderCard(element) {
     }
 }
 
-document.addEventListener('click', function(e) {
+document.addEventListener('click', function (e) {
     if (!e.target.closest('.advice-card')) {
-        document.querySelectorAll('.advice-card').forEach(function(card) {
+        document.querySelectorAll('.advice-card').forEach(function (card) {
             card.classList.remove('active');
         });
     }
     if (!e.target.closest('.intro-card')) {
-        document.querySelectorAll('.intro-card').forEach(function(card) {
+        document.querySelectorAll('.intro-card').forEach(function (card) {
             card.classList.remove('active');
         });
     }
     if (!e.target.closest('.disorder-card')) {
-        document.querySelectorAll('.disorder-card').forEach(function(card) {
+        document.querySelectorAll('.disorder-card').forEach(function (card) {
             card.classList.remove('active');
         });
     }
 });
 
-window.addEventListener('click', function(event) {
+window.addEventListener('click', function (event) {
     const moodModal = document.getElementById('moodModal');
     if (event.target === moodModal) closeMoodModal();
     if (event.target === quizModal) closeQuiz();

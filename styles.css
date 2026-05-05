@@ -55,10 +55,17 @@ body {
 }
 
 .nav-logo-img {
-    width: 65px;
-    height: 65px;
+    width: 100px;
+    height: 100px;
     object-fit: contain;
     border-radius: 12px;
+}
+
+.footer-logo-img {
+    width: 120px;
+    height: 120px;
+    object-fit: contain;
+    margin-bottom: 1rem;
 }
 
 .nav-logo-text {
@@ -952,51 +959,137 @@ body {
 }
 
 /* Responsive Design */
+/* Responsive Design & Mobile Menu */
+/* Responsive Design & Mobile Menu */
 @media (max-width: 1150px) {
     .nav-menu {
-        display: none;
-        position: absolute;
-        top: 100%;
-        right: 0;
-        width: 100%;
-        background: white;
+        display: flex;
+        position: fixed;
+        top: 0;
+        right: -100%;
+        left: auto;
+        width: 300px;
+        height: 100vh;
+        background: rgba(255, 255, 255, 0.98);
+        backdrop-filter: blur(15px);
         flex-direction: column;
-        padding: 1rem;
-        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        padding: 100px 1.5rem 2rem;
+        box-shadow: -15px 0 40px rgba(0, 0, 0, 0.15);
+        transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        z-index: 2000;
+        text-align: right;
     }
 
     .nav-menu.active {
-        display: flex;
+        right: 0;
+    }
+
+    /* Overlay for mobile menu */
+    .nav-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.4);
+        backdrop-filter: blur(4px);
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.4s ease;
+        z-index: 1999;
+    }
+
+    .nav-overlay.active {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .nav-menu li {
+        width: 100%;
+        margin-bottom: 0.5rem;
+        opacity: 0;
+        transform: translateX(20px);
+        transition: all 0.4s ease;
+    }
+
+    .nav-menu.active li {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+    .nav-menu.active li:nth-child(1) { transition-delay: 0.1s; }
+    .nav-menu.active li:nth-child(2) { transition-delay: 0.2s; }
+    .nav-menu.active li:nth-child(3) { transition-delay: 0.3s; }
+    .nav-menu.active li:nth-child(4) { transition-delay: 0.4s; }
+    .nav-menu.active li:nth-child(5) { transition-delay: 0.5s; }
+    .nav-menu.active li:nth-child(6) { transition-delay: 0.6s; }
+    .nav-menu.active li:nth-child(7) { transition-delay: 0.7s; }
+
+    .nav-menu a {
+        display: block;
+        padding: 12px 20px;
+        font-size: 1.1rem;
+        border-radius: 12px;
+        background: transparent;
+        color: #2d3748;
+    }
+
+    .nav-menu a:hover, .nav-menu a.active {
+        background: linear-gradient(135deg, rgba(233, 30, 99, 0.1), rgba(156, 39, 176, 0.1));
+        color: #e91e63 !important;
+        padding-right: 30px;
     }
 
     .nav-toggle {
         display: flex;
+        z-index: 2001;
+        width: 45px;
+        height: 45px;
+        background: white;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+    }
+
+    .nav-toggle span {
+        position: relative;
+        width: 25px;
+        height: 2px;
+        background: #e91e63;
+        transition: all 0.3s ease;
+    }
+
+    .nav-toggle span::before, .nav-toggle span::after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 2px;
+        background: #e91e63;
+        transition: all 0.3s ease;
+    }
+
+    .nav-toggle span::before { top: -8px; }
+    .nav-toggle span::after { bottom: -8px; }
+
+    .nav-toggle.active span {
+        background: transparent;
+    }
+
+    .nav-toggle.active span::before {
+        top: 0;
+        transform: rotate(45deg);
+    }
+
+    .nav-toggle.active span::after {
+        top: 0;
+        bottom: auto;
+        transform: rotate(-45deg);
     }
 
     .hero-title {
         font-size: 2.5rem;
-    }
-
-    .hero-subtitle {
-        font-size: 1.1rem;
-    }
-
-    .section-title {
-        font-size: 2rem;
-    }
-
-    .session-header {
-        flex-direction: column;
-        text-align: center;
-        gap: 1rem;
-    }
-
-    .message.user {
-        margin-right: 0;
-    }
-
-    .message.expert {
-        margin-left: 0;
     }
 
     .modal-content {
@@ -1010,7 +1103,8 @@ body {
     }
 
     .btn {
-        width: 200px;
+        width: 100%;
+        max-width: 280px;
         justify-content: center;
     }
 }
@@ -1325,7 +1419,7 @@ body {
 }
 
 .intro-card.active .intro-card-content {
-    max-height: 600px;
+    max-height: 1200px;
     opacity: 1;
     padding-top: 1.5rem;
     transform: translateY(0);
