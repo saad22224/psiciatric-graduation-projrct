@@ -435,8 +435,8 @@ function playVideo(sessionId) {
     const modal = document.getElementById('videoModal');
     const modalContent = modal.querySelector('.modal-content');
     
-    // Use first video for stigma sessions (session3, session4), second video for others
-    const isStigmaSession = sessionId === 'session3' || sessionId === 'session4';
+    // Use first video for stigma sessions, second video for others
+    const isStigmaSession = sessionId.startsWith('stigma') || sessionId === 'session5';
     const videoSrc = isStigmaSession 
         ? 'assets/WhatsApp Video 2026-04-18 at 10.17.27 PM.mp4' 
         : 'assets/WhatsApp Video 2026-04-18 at 10.17.44 PM.mp4';
@@ -634,6 +634,61 @@ function getQuizData(sessionId) {
                     ],
                     correct: 1
                 }
+            ]
+        },
+        'stigma1': {
+            questions: [
+                { question: "الوصمة النفسية تعني حكم المجتمع السلبي على الشخص المريض نفسيًا.", options: ["صح", "غلط"], correct: 0 },
+                { question: "المرض النفسي يعني ضعف في الشخصية فقط.", options: ["صح", "غلط"], correct: 1 },
+                { question: "استخدام كلمة 'مجنون' يعتبر من أشكال الوصمة النفسية.", options: ["صح", "غلط"], correct: 0 },
+                { question: "المرض النفسي لا يحتاج علاج مثل الأمراض الجسدية.", options: ["صح", "غلط"], correct: 1 },
+                { question: "الوصمة النفسية قد تؤثر على نظرة الشخص لنفسه.", options: ["صح", "غلط"], correct: 0 },
+                { question: "الوصمة النفسية تعني:", options: ["دعم المرضى نفسيًا", "حكم سلبي على المريض النفسي", "علاج نفسي", "تجاهل المرض"], correct: 1 },
+                { question: "من أمثلة الوصمة النفسية:", options: ["تشجيع العلاج", "السخرية من المريض النفسي", "فهم المرض", "طلب المساعدة"], correct: 1 }
+            ]
+        },
+        'stigma2': {
+            questions: [
+                { question: "الوصمة النفسية قد تمنع الشخص من طلب العلاج.", options: ["صح", "غلط"], correct: 0 },
+                { question: "الشخص المريض نفسيًا دائمًا يطلب المساعدة بسهولة.", options: ["صح", "غلط"], correct: 1 },
+                { question: "الصمت عن المشاعر قد يزيد الحالة سوءًا.", options: ["صح", "غلط"], correct: 0 },
+                { question: "الوصمة النفسية لا تؤثر على الثقة بالنفس.", options: ["صح", "غلط"], correct: 1 },
+                { question: "العزلة من نتائج الوصمة النفسية.", options: ["صح", "غلط"], correct: 0 },
+                { question: "من آثار الوصمة النفسية:", options: ["زيادة الدعم", "العزلة الاجتماعية", "الشفاء السريع", "زيادة الوعي"], correct: 1 },
+                { question: "الشخص الذي يتعرض للوصمة غالبًا:", options: ["يطلب المساعدة بسهولة", "يخفي مشاعره", "لا يتأثر", "يصبح أكثر ثقة دائمًا"], correct: 1 }
+            ]
+        },
+        'stigma3': {
+            questions: [
+                { question: "المرض النفسي اختيار شخصي.", options: ["صح", "غلط"], correct: 1 },
+                { question: "الاكتئاب والقلق من الاضطرابات النفسية الحقيقية.", options: ["صح", "غلط"], correct: 0 },
+                { question: "المرض النفسي لا علاقة له بالمخ.", options: ["صح", "غلط"], correct: 1 },
+                { question: "طلب العلاج النفسي دليل ضعف.", options: ["صح", "غلط"], correct: 1 },
+                { question: "الأمراض النفسية تحتاج فهم وعلاج مثل أي مرض.", options: ["صح", "غلط"], correct: 0 },
+                { question: "المرض النفسي:", options: ["ضعف شخصية", "اختيار", "حالة صحية حقيقية", "دلع"], correct: 2 },
+                { question: "مقارنة صحيحة:", options: ["المرض النفسي = كسر في العظام", "المرض النفسي = حالة صحية تحتاج علاج", "المرض النفسي = خيال", "المرض النفسي = كسل"], correct: 1 }
+            ]
+        },
+        'stigma4': {
+            questions: [
+                { question: "الإعلام أحيانًا يساهم في نشر صورة خاطئة عن المرض النفسي.", options: ["صح", "غلط"], correct: 0 },
+                { question: "المجتمع دائمًا يقدم معلومات صحيحة عن الصحة النفسية.", options: ["صح", "غلط"], correct: 1 },
+                { question: "الخوف من المجهول قد يؤدي للوصمة النفسية.", options: ["صح", "غلط"], correct: 0 },
+                { question: "نقص التوعية يزيد الفهم الصحيح للمرض النفسي.", options: ["صح", "غلط"], correct: 1 },
+                { question: "الكلمات اليومية ليس لها تأثير على الوصمة.", options: ["صح", "غلط"], correct: 1 },
+                { question: "من أسباب الوصمة النفسية:", options: ["التوعية", "الفهم", "الإعلام الخاطئ", "الدعم"], correct: 2 },
+                { question: "نقص المعرفة يؤدي إلى:", options: ["فهم أفضل", "تقليل الوصمة", "زيادة الوصمة", "علاج أسرع"], correct: 2 }
+            ]
+        },
+        'stigma5': {
+            questions: [
+                { question: "تغيير اللغة يساعد في تقليل الوصمة النفسية.", options: ["صح", "غلط"], correct: 0 },
+                { question: "السخرية من المرضى النفسيين طريقة صحيحة للتعامل.", options: ["صح", "غلط"], correct: 1 },
+                { question: "طلب المساعدة النفسية دليل شجاعة.", options: ["صح", "غلط"], correct: 0 },
+                { question: "لا يمكن تغيير نظرة المجتمع.", options: ["صح", "غلط"], correct: 1 },
+                { question: "التوعية تساعد في تقليل الوصمة.", options: ["صح", "غلط"], correct: 0 },
+                { question: "من طرق كسر الوصمة:", options: ["السخرية", "الدعم والتفهم", "تجاهل المشكلة", "الحكم على الآخرين"], correct: 1 },
+                { question: "الصحة النفسية:", options: ["ليست مهمة", "جزء من الصحة العامة", "ترف", "غير حقيقية"], correct: 1 }
             ]
         },
         'session_myths': {
@@ -853,7 +908,12 @@ function getSessionTitle(sessionId) {
         'session4': 'أول خطوة في التعافي',
         'session5': 'كسر الوصمة',
         'session6': 'متى نطلب المساعدة؟',
-        'myth_fact': 'تصحيح المفاهيم'
+        'myth_fact': 'تصحيح المفاهيم',
+        'stigma1': 'ما هي الوصمة النفسية؟',
+        'stigma2': 'تأثير الوصمة النفسية',
+        'stigma3': 'هل المرض النفسي ضعف؟',
+        'stigma4': 'جذور الوصمة النفسية',
+        'stigma5': 'كسر الوصمة النفسية'
     };
     return titles[sessionId] || 'السيشن';
 }
