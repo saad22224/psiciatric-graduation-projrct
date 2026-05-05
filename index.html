@@ -69,7 +69,11 @@
     </section>
 
     <!-- Mental Health Introduction Section -->
-    <section class="section" style="background: linear-gradient(135deg, rgba(255,255,255,0.98), rgba(252,228,236,0.5));">
+    <section class="section intro-section">
+        <div class="intro-bg-elements">
+            <div class="blob blob-1"></div>
+            <div class="blob blob-2"></div>
+        </div>
         <div class="container">
             <div class="section-header" data-aos="fade-down">
                 <h2 class="section-title">تعرف على الصحة النفسية</h2>
@@ -77,28 +81,49 @@
             </div>
 
             <div class="intro-content">
-                <div class="intro-card" data-aos="fade-up" data-aos-delay="100">
-                    <div class="intro-icon">
-                        <i class="fas fa-heart"></i>
+                <div class="intro-card" data-aos="fade-up" data-aos-delay="100" onclick="toggleIntroCard(this)">
+                    <div class="intro-card-header">
+                        <div class="intro-icon">
+                            <i class="fas fa-heart"></i>
+                        </div>
+                        <h3>إيه هي الصحة النفسية؟</h3>
+                        <div class="intro-toggle-wrapper">
+                            <i class="fas fa-chevron-down intro-toggle"></i>
+                        </div>
                     </div>
-                    <h3>إيه هي الصحة النفسية؟</h3>
-                    <p>الصحة النفسية مش بس غياب المرض، هي حالة من الرفاهية النفسية والاجتماعية والعاطفية. الصحة النفسية الكويسة بتخلينا نفهم قدراتنا، نتعامل مع ضغوط الحياة العادية، نشتغل بإنتاجية، ونساهم في مجتمعنا.</p>
+                    <div class="intro-card-content">
+                        <p>الصحة النفسية مش بس غياب المرض، هي حالة من الرفاهية النفسية والاجتماعية والعاطفية. الصحة النفسية الكويسة بتخلينا نفهم قدراتنا، نتعامل مع ضغوط الحياة العادية، نشتغل بإنتاجية، ونساهم في مجتمعنا.</p>
+                    </div>
                 </div>
 
-                <div class="intro-card" data-aos="fade-up" data-aos-delay="200">
-                    <div class="intro-icon">
-                        <i class="fas fa-brain"></i>
+                <div class="intro-card" data-aos="fade-up" data-aos-delay="200" onclick="toggleIntroCard(this)">
+                    <div class="intro-card-header">
+                        <div class="intro-icon">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <h3>ليه الصحة النفسية مهمة؟</h3>
+                        <div class="intro-toggle-wrapper">
+                            <i class="fas fa-chevron-down intro-toggle"></i>
+                        </div>
                     </div>
-                    <h3>ليه الصحة النفسية مهمة؟</h3>
-                    <p>الصحة النفسية بتأثر على كل حاجة في حياتنا: قراراتنا، علاقاتنا، صحتنا الجسدية، وأدائنا في الشغل والدراسة. لما نهتم بصحتنا النفسية، بنقدر نعيش حياة أكثر سعادة وإنجاز.</p>
+                    <div class="intro-card-content">
+                        <p>الصحة النفسية بتأثر على كل حاجة في حياتنا: قراراتنا، علاقاتنا، صحتنا الجسدية، وأدائنا في الشغل والدراسة. لما نهتم بصحتنا النفسية، بنقدر نعيش حياة أكثر سعادة وإنجاز.</p>
+                    </div>
                 </div>
 
-                <div class="intro-card" data-aos="fade-up" data-aos-delay="300">
-                    <div class="intro-icon">
-                        <i class="fas fa-hands-helping"></i>
+                <div class="intro-card" data-aos="fade-up" data-aos-delay="300" onclick="toggleIntroCard(this)">
+                    <div class="intro-card-header">
+                        <div class="intro-icon">
+                            <i class="fas fa-hands-helping"></i>
+                        </div>
+                        <h3>نقدر نحسن صحتنا النفسية</h3>
+                        <div class="intro-toggle-wrapper">
+                            <i class="fas fa-chevron-down intro-toggle"></i>
+                        </div>
                     </div>
-                    <h3>نقدر نحسن صحتنا النفسية</h3>
-                    <p>زي ما بنهتم بصحتنا الجسدية بالرياضة والأكل الصحي، نقدر نهتم بصحتنا النفسية بالتعلم، التوعية، وطلب المساعدة لما نحتاجها. كل خطوة صغيرة بتفرق!</p>
+                    <div class="intro-card-content">
+                        <p>زي ما بنهتم بصحتنا الجسدية بالرياضة والأكل الصحي، نقدر نهتم بصحتنا النفسية بالتعلم، التوعية، وطلب المساعدة لما نحتاجها. كل خطوة صغيرة بتفرق!</p>
+                    </div>
                 </div>
             </div>
 
@@ -129,140 +154,320 @@
 
             <div class="disorders-grid">
                 <!-- Depression -->
-                <div class="disorder-card" data-aos="fade-up" data-aos-delay="100">
-                    <div class="disorder-icon">
-                        <i class="fas fa-cloud-rain"></i>
+                <div class="disorder-card" data-aos="fade-up" data-aos-delay="100" onclick="toggleDisorderCard(this)">
+                    <div class="disorder-header">
+                        <div class="disorder-icon">
+                            <i class="fas fa-cloud-rain"></i>
+                        </div>
+                        <h3>الاكتئاب</h3>
+                        <i class="fas fa-chevron-down disorder-toggle"></i>
                     </div>
-                    <h3>الاكتئاب</h3>
-                    <p class="disorder-desc">الاكتئاب مش بس "حزن" أو "زعل"، هو اضطراب نفسي بيأثر على المزاج والتفكير والجسد. الشخص المصاب بيكون فاقد الأمل والطاقة، وبيبعد عن الأنشطة اللي كان بيحبها.</p>
-                    <div class="disorder-symptoms">
-                        <h4><i class="fas fa-exclamation-circle"></i> الأعراض:</h4>
-                        <ul>
-                            <li>حزن مستمر لأكتر من أسبوعين</li>
-                            <li>فقدان الشغف والاهتمام</li>
-                            <li>اضطراب النوم (زيادة أو قلة)</li>
-                            <li>تعب مستمر حتى مع الراحة</li>
-                            <li>صعوبة التركيز</li>
-                        </ul>
-                    </div>
-                    <div class="disorder-treatment">
-                        <h4><i class="fas fa-hand-holding-medical"></i> العلاج:</h4>
-                        <p>العلاج النفسي (الكلام) والأدوية لو لازم، مع دعم الأسرة والأصدقاء. العلاج بيفرق جداً والتحسن ممكن يبدأ من أول شهر.</p>
+                    
+                    <div class="disorder-content">
+                        <div class="disorder-info-block">
+                            <div class="disorder-text">
+                                <p class="disorder-desc">الاكتئاب مش بس "حزن" أو "زعل"، هو اضطراب نفسي بيأثر على المزاج والتفكير والجسد. الشخص المصاب بيكون فاقد الأمل والطاقة، وبيبعد عن الأنشطة اللي كان بيحبها.</p>
+                            </div>
+                            <div class="disorder-image-placeholder">
+                                <img src="assets/photo_3_2026-05-05_20-14-49.jpg" alt="الاكتئاب" class="disorder-img">
+                            </div>
+                        </div>
+
+                        <div class="disorder-info-block reverse">
+                            <div class="disorder-symptoms">
+                                <h4><i class="fas fa-exclamation-circle"></i> الأعراض:</h4>
+                                <ul>
+                                    <li>حزن مستمر لأكتر من أسبوعين</li>
+                                    <li>فقدان الشغف والاهتمام</li>
+                                    <li>اضطراب النوم (زيادة أو قلة)</li>
+                                    <li>تعب مستمر حتى مع الراحة</li>
+                                    <li>صعوبة التركيز</li>
+                                </ul>
+                            </div>
+                            <div class="disorder-image-placeholder">
+                                <img src="assets/photo_21_2026-05-05_20-14-49.jpg" alt="أعراض الاكتئاب" class="disorder-img">
+                            </div>
+                        </div>
+
+                        <div class="disorder-info-block">
+                            <div class="disorder-causes">
+                                <h4><i class="fas fa-reason"></i> الأسباب:</h4>
+                                <p>الاكتئاب ملوش سبب واحد، غالباً بيكون مزيج من عوامل جينية، تغيرات في كيمياء الدماغ، ضغوطات الحياة المستمرة، وصدمات الطفولة.</p>
+                            </div>
+                            <div class="disorder-image-placeholder">
+                                <img src="assets/photo_20_2026-05-05_20-14-49.jpg" alt="أسباب الاكتئاب" class="disorder-img">
+                            </div>
+                        </div>
+
+                        <div class="disorder-treatment">
+                            <h4><i class="fas fa-hand-holding-medical"></i> العلاج:</h4>
+                            <p>العلاج النفسي (الكلام) والأدوية لو لازم، مع دعم الأسرة والأصدقاء. العلاج بيفرق جداً والتحسن ممكن يبدأ من أول شهر.</p>
+                        </div>
                     </div>
                 </div>
 
                 <!-- Anxiety -->
-                <div class="disorder-card" data-aos="fade-up" data-aos-delay="200">
-                    <div class="disorder-icon">
-                        <i class="fas fa-bolt"></i>
+                <div class="disorder-card" data-aos="fade-up" data-aos-delay="200" onclick="toggleDisorderCard(this)">
+                    <div class="disorder-header">
+                        <div class="disorder-icon">
+                            <i class="fas fa-bolt"></i>
+                        </div>
+                        <h3>القلق العام</h3>
+                        <i class="fas fa-chevron-down disorder-toggle"></i>
                     </div>
-                    <h3>القلق العام</h3>
-                    <p class="disorder-desc">القلق العام هو خوف مبالغ فيه وتوتر مستمر عن مواقف يومية عادية. الشخص بيحس بقلق مستمر وصعوبة في التحكم في المخاوف.</p>
-                    <div class="disorder-symptoms">
-                        <h4><i class="fas fa-exclamation-circle"></i> الأعراض:</h4>
-                        <ul>
-                            <li>عصبية وتوتر مستمر</li>
-                            <li>سرعة ضربات القلب</li>
-                            <li>تعرق وخفقان</li>
-                            <li>صعوبة التنفس</li>
-                            <li>أفكار سلبية مستمرة</li>
-                        </ul>
-                    </div>
-                    <div class="disorder-treatment">
-                        <h4><i class="fas fa-hand-holding-medical"></i> العلاج:</h4>
-                        <p>تمارين الاسترخاء، العلاج المعرفي السلوكي، وتقنيات التنفس. الأدوية ممكن تساعد في الحالات المتوسطة والشديدة.</p>
+                    
+                    <div class="disorder-content">
+                        <div class="disorder-info-block">
+                            <div class="disorder-text">
+                                <p class="disorder-desc">القلق العام هو خوف مبالغ فيه وتوتر مستمر عن مواقف يومية عادية. الشخص بيحس بقلق مستمر وصعوبة في التحكم في المخاوف.</p>
+                            </div>
+                            <div class="disorder-image-placeholder">
+                                <img src="assets/photo_15_2026-05-05_20-14-49.jpg" alt="القلق العام" class="disorder-img">
+                            </div>
+                        </div>
+
+                        <div class="disorder-info-block reverse">
+                            <div class="disorder-symptoms">
+                                <h4><i class="fas fa-exclamation-circle"></i> الأعراض:</h4>
+                                <ul>
+                                    <li>عصبية وتوتر مستمر</li>
+                                    <li>سرعة ضربات القلب</li>
+                                    <li>تعرق وخفقان</li>
+                                    <li>صعوبة التنفس</li>
+                                    <li>أفكار سلبية مستمرة</li>
+                                </ul>
+                            </div>
+                            <div class="disorder-image-placeholder">
+                                <img src="assets/photo_22_2026-05-05_20-14-49.jpg" alt="أعراض القلق" class="disorder-img">
+                            </div>
+                        </div>
+
+                        <div class="disorder-info-block">
+                            <div class="disorder-causes">
+                                <h4><i class="fas fa-reason"></i> الأسباب:</h4>
+                                <p>الاستعداد الوراثي، خلل في النواقل العصبية، ضغوطات العمل أو الدراسة، والتعرض لصدمات نفسية حادة.</p>
+                            </div>
+                            <div class="disorder-image-placeholder">
+                                <img src="assets/photo_20_2026-05-05_20-14-49.jpg" alt="أسباب القلق" class="disorder-img">
+                            </div>
+                        </div>
+
+                        <div class="disorder-treatment">
+                            <h4><i class="fas fa-hand-holding-medical"></i> العلاج:</h4>
+                            <p>تمارين الاسترخاء، العلاج المعرفي السلوكي، وتقنيات التنفس. الأدوية ممكن تساعد في الحالات المتوسطة والشديدة.</p>
+                        </div>
                     </div>
                 </div>
 
                 <!-- Bipolar -->
-                <div class="disorder-card" data-aos="fade-up" data-aos-delay="300">
-                    <div class="disorder-icon">
-                        <i class="fas fa-chart-line"></i>
+                <div class="disorder-card" data-aos="fade-up" data-aos-delay="300" onclick="toggleDisorderCard(this)">
+                    <div class="disorder-header">
+                        <div class="disorder-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h3>الاضطراب ثنائي القطب</h3>
+                        <i class="fas fa-chevron-down disorder-toggle"></i>
                     </div>
-                    <h3>الاضطراب ثنائي القطب</h3>
-                    <p class="disorder-desc">تغيرات حادة في المزاج بين فترات الاكتئاب وفترات الهوس (نشاط مبالغ فيه). الشخص بيحس بكآبة شديدة ثم فجأة نشاط غير طبيعي.</p>
-                    <div class="disorder-symptoms">
-                        <h4><i class="fas fa-exclamation-circle"></i> الأعراض:</h4>
-                        <ul>
-                            <li>تقلبات مزاجية حادة</li>
-                            <li>فترات نشاط غير طبيعي (الهوس)</li>
-                            <li>نقص الحاجة للنوم في الهوس</li>
-                            <li>تصرفات مندفعة</li>
-                            <li>أفكار كبيرة عن النفس</li>
-                        </ul>
-                    </div>
-                    <div class="disorder-treatment">
-                        <h4><i class="fas fa-hand-holding-medical"></i> العلاج:</h4>
-                        <p>أدوية مثبتة المزاج (مهمة جداً)، العلاج النفسي، ومتابعة منتظمة مع الطبيب. المتابعة ضرورية للحياة الطبيعية.</p>
+                    
+                    <div class="disorder-content">
+                        <div class="disorder-info-block">
+                            <div class="disorder-text">
+                                <p class="disorder-desc">تغيرات حادة في المزاج بين فترات الاكتئاب وفترات الهوس (نشاط مبالغ فيه). الشخص بيحس بكآبة شديدة ثم فجأة نشاط غير طبيعي.</p>
+                            </div>
+                            <div class="disorder-image-placeholder">
+                                <img src="assets/photo_7_2026-05-05_20-14-49.jpg" alt="ثنائي القطب" class="disorder-img">
+                            </div>
+                        </div>
+
+                        <div class="disorder-info-block reverse">
+                            <div class="disorder-symptoms">
+                                <h4><i class="fas fa-exclamation-circle"></i> الأعراض:</h4>
+                                <ul>
+                                    <li>تقلبات مزاجية حادة</li>
+                                    <li>فترات نشاط غير طبيعي (الهوس)</li>
+                                    <li>نقص الحاجة للنوم في الهوس</li>
+                                    <li>تصرفات مندفعة</li>
+                                    <li>أفكار كبيرة عن النفس</li>
+                                </ul>
+                            </div>
+                            <div class="disorder-image-placeholder">
+                                <img src="assets/photo_11_2026-05-05_20-14-49.jpg" alt="أعراض ثنائي القطب" class="disorder-img">
+                            </div>
+                        </div>
+
+                        <div class="disorder-info-block">
+                            <div class="disorder-causes">
+                                <h4><i class="fas fa-reason"></i> الأسباب:</h4>
+                                <p>عوامل بيولوجية وتغيرات في كيمياء المخ، العوامل الوراثية، والتاريخ العائلي للاضطرابات المزاجية.</p>
+                            </div>
+                            <div class="disorder-image-placeholder">
+                                <img src="assets/photo_12_2026-05-05_20-14-49.jpg" alt="أسباب ثنائي القطب" class="disorder-img">
+                            </div>
+                        </div>
+
+                        <div class="disorder-treatment">
+                            <h4><i class="fas fa-hand-holding-medical"></i> العلاج:</h4>
+                            <p>أدوية مثبتة المزاج (مهمة جداً)، العلاج النفسي، ومتابعة منتظمة مع الطبيب. المتابعة ضرورية للحياة الطبيعية.</p>
+                        </div>
                     </div>
                 </div>
 
                 <!-- OCD -->
-                <div class="disorder-card" data-aos="fade-up" data-aos-delay="400">
-                    <div class="disorder-icon">
-                        <i class="fas fa-sync-alt"></i>
+                <div class="disorder-card" data-aos="fade-up" data-aos-delay="400" onclick="toggleDisorderCard(this)">
+                    <div class="disorder-header">
+                        <div class="disorder-icon">
+                            <i class="fas fa-sync-alt"></i>
+                        </div>
+                        <h3>الوسواس القهري</h3>
+                        <i class="fas fa-chevron-down disorder-toggle"></i>
                     </div>
-                    <h3>الوسواس القهري</h3>
-                    <p class="disorder-desc">أفكار متكررة (وساوس) بتيجي بالقوة وبتسبب قلق، وإجراءات متكررة (قهرية) عشان نقلل القلق. الشخص بيعرف إن ده غير منطقي بس مش قادر يوقفه.</p>
-                    <div class="disorder-symptoms">
-                        <h4><i class="fas fa-exclamation-circle"></i> الأعراض:</h4>
-                        <ul>
-                            <li>أفكار متكررة غير مرغوب فيها</li>
-                            <li>حاجة للتنظيف المتكرر</li>
-                            <li>التحقق المتكرر (القفل، الغاز)</li>
-                            <li>تكرار أفعال معينة</li>
-                            <li>إضاعة وقت كبير في الطقوس</li>
-                        </ul>
-                    </div>
-                    <div class="disorder-treatment">
-                        <h4><i class="fas fa-hand-holding-medical"></i> العلاج:</h4>
-                        <p>العلاج السلوكي المعرفي (التعرض والوقاية من الاستجابة)، الأدوية لو لازم. العلاج بيحسن الحالة كتير.</p>
+                    
+                    <div class="disorder-content">
+                        <div class="disorder-info-block">
+                            <div class="disorder-text">
+                                <p class="disorder-desc">أفكار متكررة (وساوس) بتيجي بالقوة وبتسبب قلق، وإجراءات متكررة (قهرية) عشان نقلل القلق. الشخص بيعرف إن ده غير منطقي بس مش قادر يوقفه.</p>
+                            </div>
+                            <div class="disorder-image-placeholder">
+                                <img src="assets/photo_31_2026-05-05_20-14-49.jpg" alt="الوسواس القهري" class="disorder-img">
+                            </div>
+                        </div>
+
+                        <div class="disorder-info-block reverse">
+                            <div class="disorder-symptoms">
+                                <h4><i class="fas fa-exclamation-circle"></i> الأعراض:</h4>
+                                <ul>
+                                    <li>أفكار متكررة غير مرغوب فيها</li>
+                                    <li>حاجة للتنظيف المتكرر</li>
+                                    <li>التحقق المتكرر (القفل، الغاز)</li>
+                                    <li>تكرار أفعال معينة</li>
+                                    <li>إضاعة وقت كبير في الطقوس</li>
+                                </ul>
+                            </div>
+                            <div class="disorder-image-placeholder">
+                                <img src="assets/photo_31_2026-05-05_20-14-49.jpg" alt="أعراض الوسواس" class="disorder-img">
+                            </div>
+                        </div>
+
+                        <div class="disorder-info-block">
+                            <div class="disorder-causes">
+                                <h4><i class="fas fa-reason"></i> الأسباب:</h4>
+                                <p>عوامل بيولوجية في الدماغ، نقص السيروتونين، عوامل وراثية، وعوامل بيئية مثل العدوى أو التوتر الشديد.</p>
+                            </div>
+                            <div class="disorder-image-placeholder">
+                                <img src="assets/photo_35_2026-05-05_20-14-49.jpg" alt="أسباب الوسواس" class="disorder-img">
+                            </div>
+                        </div>
+
+                        <div class="disorder-treatment">
+                            <h4><i class="fas fa-hand-holding-medical"></i> العلاج:</h4>
+                            <p>العلاج السلوكي المعرفي (التعرض والوقاية من الاستجابة)، الأدوية لو لازم. العلاج بيحسن الحالة كتير.</p>
+                        </div>
                     </div>
                 </div>
 
                 <!-- PTSD -->
-                <div class="disorder-card" data-aos="fade-up" data-aos-delay="500">
-                    <div class="disorder-icon">
-                        <i class="fas fa-first-aid"></i>
+                <div class="disorder-card" data-aos="fade-up" data-aos-delay="500" onclick="toggleDisorderCard(this)">
+                    <div class="disorder-header">
+                        <div class="disorder-icon">
+                            <i class="fas fa-first-aid"></i>
+                        </div>
+                        <h3>اضطراب ما بعد الصدمة</h3>
+                        <i class="fas fa-chevron-down disorder-toggle"></i>
                     </div>
-                    <h3>اضطراب ما بعد الصدمة</h3>
-                    <p class="disorder-desc">حالة نفسية بتيجي بعد تجربة صادمة (حادث، عنف، كارثة). الشخص بيعيش التجربة تاني من خلال كوابيس أو ذكريات مفاجئة.</p>
-                    <div class="disorder-symptoms">
-                        <h4><i class="fas fa-exclamation-circle"></i> الأعراض:</h4>
-                        <ul>
-                            <li>كوابيس عن الصدمة</li>
-                            <li>ذكريات مفاجئة مؤلمة</li>
-                            <li>تجنب أي حاجة تفكر بالتجربة</li>
-                            <li>فرط الاستثارة والانفعال</li>
-                            <li>صعوبة النوم</li>
-                        </ul>
-                    </div>
-                    <div class="disorder-treatment">
-                        <h4><i class="fas fa-hand-holding-medical"></i> العلاج:</h4>
-                        <p>العلاج النفسي المتخصص (EMDR)، العلاج المعرفي السلوكي، الأدوية للأعراض الحادة. الدعم الأسري مهم جداً.</p>
+                    
+                    <div class="disorder-content">
+                        <div class="disorder-info-block">
+                            <div class="disorder-text">
+                                <p class="disorder-desc">حالة نفسية بتيجي بعد تجربة صادمة (حادث، عنف، كارثة). الشخص بيعيش التجربة تاني من خلال كوابيس أو ذكريات مفاجئة.</p>
+                            </div>
+                            <div class="disorder-image-placeholder">
+                                <img src="assets/photo_25_2026-05-05_20-14-49.jpg" alt="ما بعد الصدمة" class="disorder-img">
+                            </div>
+                        </div>
+
+                        <div class="disorder-info-block reverse">
+                            <div class="disorder-symptoms">
+                                <h4><i class="fas fa-exclamation-circle"></i> الأعراض:</h4>
+                                <ul>
+                                    <li>كوابيس عن الصدمة</li>
+                                    <li>ذكريات مفاجئة مؤلمة</li>
+                                    <li>تجنب أي حاجة تفكر بالتجربة</li>
+                                    <li>فرط الاستثارة والانفعال</li>
+                                    <li>صعوبة النوم</li>
+                                </ul>
+                            </div>
+                            <div class="disorder-image-placeholder">
+                                <img src="assets/photo_26_2026-05-05_20-14-49.jpg" alt="أعراض الصدمة" class="disorder-img">
+                            </div>
+                        </div>
+
+                        <div class="disorder-info-block">
+                            <div class="disorder-causes">
+                                <h4><i class="fas fa-reason"></i> الأسباب:</h4>
+                                <p>التعرض المباشر لأحداث صادمة (حروب، حوادث، عنف منزلي)، أو فقدان شخص عزيز بشكل مفاجئ.</p>
+                            </div>
+                            <div class="disorder-image-placeholder">
+                                <img src="assets/photo_30_2026-05-05_20-14-49.jpg" alt="أسباب الصدمة" class="disorder-img">
+                            </div>
+                        </div>
+
+                        <div class="disorder-treatment">
+                            <h4><i class="fas fa-hand-holding-medical"></i> العلاج:</h4>
+                            <p>العلاج النفسي المتخصص (EMDR)، العلاج المعرفي السلوكي، الأدوية للأعراض الحادة. الدعم الأسري مهم جداً.</p>
+                        </div>
                     </div>
                 </div>
 
                 <!-- Schizophrenia -->
-                <div class="disorder-card" data-aos="fade-up" data-aos-delay="600">
-                    <div class="disorder-icon">
-                        <i class="fas fa-puzzle-piece"></i>
+                <div class="disorder-card" data-aos="fade-up" data-aos-delay="600" onclick="toggleDisorderCard(this)">
+                    <div class="disorder-header">
+                        <div class="disorder-icon">
+                            <i class="fas fa-puzzle-piece"></i>
+                        </div>
+                        <h3>الفصام</h3>
+                        <i class="fas fa-chevron-down disorder-toggle"></i>
                     </div>
-                    <h3>الفصام</h3>
-                    <p class="disorder-desc">اضطراب نفسي خطير بيأثر على التفكير والإدراك والسلوك. الشخص ممكن يسمع أصوات أو يصدق حاجات مش حقيقية. محتاج علاج مستمر.</p>
-                    <div class="disorder-symptoms">
-                        <h4><i class="fas fa-exclamation-circle"></i> الأعراض:</h4>
-                        <ul>
-                            <li>سماع أصوات (هلوسات سمعية)</li>
-                            <li>أفكار غير حقيقية (أوهام)</li>
-                            <li>كلام مش منظم</li>
-                            <li>سلوك غريب أو متبلد</li>
-                            <li>عزلة اجتماعية</li>
-                        </ul>
-                    </div>
-                    <div class="disorder-treatment">
-                        <h4><i class="fas fa-hand-holding-medical"></i> العلاج:</h4>
-                        <p>أدوية مضادة للذهان (ضرورية)، العلاج النفسي، إعادة التأهيل، ومتابعة منتظمة مدى الحياة. مع العلاج ممكن يعيش حياة طبيعية.</p>
+                    
+                    <div class="disorder-content">
+                        <div class="disorder-info-block">
+                            <div class="disorder-text">
+                                <p class="disorder-desc">اضطراب نفسي خطير بيأثر على التفكير والإدراك والسلوك. الشخص ممكن يسمع أصوات أو يصدق حاجات مش حقيقية. محتاج علاج مستمر.</p>
+                            </div>
+                            <div class="disorder-image-placeholder">
+                                <img src="assets/photo_3_2026-05-05_20-14-49.jpg" alt="الفصام" class="disorder-img">
+                            </div>
+                        </div>
+
+                        <div class="disorder-info-block reverse">
+                            <div class="disorder-symptoms">
+                                <h4><i class="fas fa-exclamation-circle"></i> الأعراض:</h4>
+                                <ul>
+                                    <li>سماع أصوات (هلوسات سمعية)</li>
+                                    <li>أفكار غير حقيقية (أوهام)</li>
+                                    <li>كلام مش منظم</li>
+                                    <li>سلوك غريب أو متبلد</li>
+                                    <li>عزلة اجتماعية</li>
+                                </ul>
+                            </div>
+                            <div class="disorder-image-placeholder">
+                                <img src="assets/photo_1_2026-05-05_20-14-49.jpg" alt="أعراض الفصام" class="disorder-img">
+                            </div>
+                        </div>
+
+                        <div class="disorder-info-block">
+                            <div class="disorder-causes">
+                                <h4><i class="fas fa-reason"></i> الأسباب:</h4>
+                                <p>عوامل جينية، خلل في نواقل الدماغ (الدوبامين)، عوامل بيئية في الطفولة، والتغيرات الهرمونية عند البلوغ.</p>
+                            </div>
+                            <div class="disorder-image-placeholder">
+                                <img src="assets/photo_5_2026-05-05_20-14-49.jpg" alt="أسباب الفصام" class="disorder-img">
+                            </div>
+                        </div>
+
+                        <div class="disorder-treatment">
+                            <h4><i class="fas fa-hand-holding-medical"></i> العلاج:</h4>
+                            <p>أدوية مضادة للذهان (ضرورية)، العلاج النفسي، إعادة التأهيل، ومتابعة منتظمة مدى الحياة. مع العلاج ممكن يعيش حياة طبيعية.</p>
+                        </div>
                     </div>
                 </div>
             </div>

@@ -1098,10 +1098,63 @@ function toggleAdvice(adviceId, event) {
     }
 }
 
+// Intro Cards Toggle Function
+function toggleIntroCard(element) {
+    const isAlreadyActive = element.classList.contains('active');
+    
+    // Close ALL intro cards first
+    document.querySelectorAll('.intro-card').forEach(function(card) {
+        card.classList.remove('active');
+    });
+    
+    // If the clicked card wasn't active, open it
+    if (!isAlreadyActive) {
+        element.classList.add('active');
+    }
+}
+
+// Function to toggle Mental Disorder Cards
+function toggleDisorderCard(element) {
+    const isAlreadyActive = element.classList.contains('active');
+    
+    // Close ALL disorder cards first
+    document.querySelectorAll('.disorder-card').forEach(function(card) {
+        card.classList.remove('active');
+    });
+    
+    // If the clicked card wasn't active, open it
+    if (!isAlreadyActive) {
+        element.classList.add('active');
+        
+        // Scroll to card for better visibility
+        setTimeout(() => {
+            const cardTop = element.getBoundingClientRect().top + window.pageYOffset;
+            const offset = 100;
+            window.scrollTo({
+                top: cardTop - offset,
+                behavior: 'smooth'
+            });
+        }, 300);
+    }
+}
+
 // Close cards when clicking outside
 document.addEventListener('click', function(e) {
+    // Handle advice cards
     if (!e.target.closest('.advice-card')) {
         document.querySelectorAll('.advice-card').forEach(function(card) {
+            card.classList.remove('active');
+        });
+    }
+    // Handle intro cards
+    if (!e.target.closest('.intro-card')) {
+        document.querySelectorAll('.intro-card').forEach(function(card) {
+            card.classList.remove('active');
+        });
+    }
+    // Handle disorder cards
+    if (!e.target.closest('.disorder-card')) {
+        document.querySelectorAll('.disorder-card').forEach(function(card) {
             card.classList.remove('active');
         });
     }
