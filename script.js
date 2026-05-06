@@ -324,7 +324,7 @@ function showQuizResults(score, totalQuestions) {
     if (percentage >= 80) message = 'ممتاز! فهمك كويس جداً للموضوع 👏';
     else if (percentage >= 60) message = 'شطور! فهمت الأساسيات كويس 👍';
     else if (percentage >= 40) message = 'مش وحش! بس راجع المحتوى تاني عشان تفهم أكتر 📚';
-    else message = 'كمل تعلم! راجع السيشنات وحاول تاني 💪';
+    else message = 'كمل تعلم! راجع الجلسات وحاول تاني 💪';
 
     const resultsHtml = `
         <div class="quiz-result">
@@ -759,7 +759,7 @@ function getSessionTitle(sessionId) {
         'support2': 'ماذا نقول وماذا لا نقول؟',
         'support3': 'حدود الدعم النفسي'
     };
-    return titles[sessionId] || 'السيشن';
+    return titles[sessionId] || 'الجلسة';
 }
 
 const moodResponses = {
