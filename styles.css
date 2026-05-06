@@ -54,6 +54,16 @@ body {
     transform: scale(1.05);
 }
 
+
+
+.nav-logo-img {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    border-radius: 12px;
+    transform: scale(1.6);
+    margin: 0 20px;
+}
 @media(max-width:767px) {
     .nav-logo-img {
         width: 120px;
@@ -61,16 +71,6 @@ body {
     }
 
 }
-
-.nav-logo-img {
-    width: 75px;
-    height: 75px;
-    object-fit: contain;
-    border-radius: 12px;
-    transform: scale(1.6);
-    margin: 0 20px;
-}
-
 
 
 .footer-logo-img {
