@@ -5,6 +5,11 @@
     box-sizing: border-box;
 }
 
+html, body {
+    overflow-x: hidden;
+    width: 100%;
+}
+
 body {
     font-family: 'Cairo', sans-serif;
     line-height: 1.6;
@@ -515,14 +520,44 @@ body {
         flex-direction: column-reverse;
         text-align: center;
         gap: 2rem;
+        align-items: center;
+        width: 100%;
+        padding: 0;
+        margin: 0;
     }
 
     .hero-text {
         text-align: center;
+        width: 100%;
+        padding: 0;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .hero-text > * {
+        margin-left: auto !important;
+        margin-right: auto !important;
+        text-align: center !important;
+    }
+
+    .hero-team-intro, .safe-space-intro {
+        width: 100% !important;
+        max-width: 100% !important;
+        box-sizing: border-box;
+    }
+
+    .safe-space-intro {
+        border-right: none !important;
+        border-top: 5px solid #e91e63;
     }
 
     .hero-buttons {
-        justify-content: center;
+        justify-content: center !important;
+        width: 100%;
+        flex-wrap: wrap;
+        gap: 1rem;
     }
 
     .hero-title {
