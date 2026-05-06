@@ -144,7 +144,7 @@ function showSupportToast() {
             background: "linear-gradient(135deg, #e91e63, #9c27b0)",
             borderRadius: "12px",
             boxShadow: "0 8px 25px rgba(233, 30, 99, 0.3)",
-            fontFamily: "Tajawal, sans-serif",
+            fontFamily: "Cairo, sans-serif",
             fontSize: "16px",
             padding: "16px 24px",
             textAlign: "right",
@@ -421,7 +421,7 @@ function showNotification(message, type = 'info') {
         style: {
             background: colors[type] || colors.info,
             borderRadius: "8px",
-            fontFamily: "Tajawal, sans-serif"
+            fontFamily: "Cairo, sans-serif"
         }
     }).showToast();
 }

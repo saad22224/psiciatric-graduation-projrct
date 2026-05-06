@@ -6,12 +6,16 @@
 }
 
 body {
-    font-family: 'Tajawal', sans-serif;
+    font-family: 'Cairo', sans-serif;
     line-height: 1.6;
     color: #2d3748;
     background: linear-gradient(135deg, #e0f7fa 0%, #f3e5f5 50%, #fff3e0 100%);
     min-height: 100vh;
     background-attachment: fixed;
+}
+
+* {
+    font-family: 'Cairo', sans-serif;
 }
 
 /* Container */
@@ -64,6 +68,7 @@ body {
     transform: scale(1.6);
     margin: 0 20px;
 }
+
 @media(max-width:767px) {
     .nav-logo-img {
         width: 120px;
@@ -223,10 +228,61 @@ body {
 }
 
 .team-text {
-    font-size: 1rem;
+    font-size: 1.1rem;
     color: #4a5568;
-    margin: 0.2rem 0;
+    margin: 0.4rem 0;
     font-weight: 600;
+}
+
+.glowing-text {
+    font-weight: 900;
+    color: #e91e63;
+    text-shadow: 0 0 10px rgba(233, 30, 99, 0.5), 0 0 20px rgba(233, 30, 99, 0.3);
+    letter-spacing: 2px;
+    display: inline-block;
+    position: relative;
+    padding: 0 5px;
+    transition: all 0.3s ease;
+    direction: ltr;
+}
+
+.glowing-text:hover {
+    text-shadow: 0 0 15px rgba(233, 30, 99, 0.8), 0 0 30px rgba(233, 30, 99, 0.5);
+    transform: scale(1.05);
+}
+
+.banner-tagline {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 1rem 0;
+    color: #9c27b0;
+    letter-spacing: 1px;
+    min-height: 1.8rem;
+    display: flex;
+    justify-content: center;
+    gap: 2px;
+    direction: ltr;
+}
+
+.banner-tagline span {
+    display: inline-block;
+    opacity: 0;
+    transform: translateY(10px);
+    animation: revealLetter 0.4s ease forwards;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+}
+
+.glowing-text span {
+    display: inline-block;
+    opacity: 0;
+    animation: revealLetter 0.4s ease forwards;
+}
+
+@keyframes revealLetter {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .supervisors {
