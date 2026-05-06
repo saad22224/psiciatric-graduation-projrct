@@ -240,6 +240,7 @@ body {
 }
 
 .glowing-text {
+    font-size: 1.8rem;
     font-weight: 900;
     color: #e91e63;
     text-shadow: 0 0 10px rgba(233, 30, 99, 0.5), 0 0 20px rgba(233, 30, 99, 0.3);
@@ -257,7 +258,7 @@ body {
 }
 
 .banner-tagline {
-    font-size: 1.5rem;
+    font-size: 1.1rem;
     font-weight: 700;
     margin: 1rem 0;
     color: #9c27b0;
@@ -566,6 +567,14 @@ body {
 
     .hero-main-img {
         max-width: 300px;
+    }
+
+    .glowing-text {
+        font-size: 1.4rem;
+    }
+
+    .banner-tagline {
+        font-size: 0.9rem;
     }
 }
 
